@@ -87,19 +87,6 @@ RSpec.describe 'the admin dashboard', :vcr do
       end
     end
 
-    # As an admin,
-    # When I visit the admin dashboard
-    # Then I see a section for "Incomplete Invoices"
-    # In that section I see a list of the ids of all invoices
-    # That have items that have not yet been shipped
-    # And each invoice id links to that invoice's admin show page
-
-    # As an admin,
-    # When I visit the admin dashboard
-    # In the section for "Incomplete Invoices",
-    # Next to each invoice id I see the date that the invoice was created
-    # And I see the date formatted like "Monday, July 18, 2019"
-    # And I see that the list is ordered from oldest to newest
     it 'shows list of incomplete invoices by id in ascending order' do
       third_invoice  = create(:invoice, :with_pending_invoice_items, created_at: '2018-02-13 14:53:59 UTC')
       fourth_invoice = create(:invoice, :with_pending_invoice_items, created_at: '2020-02-13 14:53:59 UTC')
