@@ -11,11 +11,11 @@ class Item < ApplicationRecord
   enum status: [ :disabled, :enabled ]
 
   def self.enabled_items
-    where('status = ?', 1)
+    where(status: 'enabled')
   end
 
   def self.disabled_items
-    where('status = ?', 1)
+    where(status: 'disabled')
   end
 
   def best_sales_day
