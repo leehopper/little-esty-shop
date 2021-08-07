@@ -6,6 +6,9 @@ class Item < ApplicationRecord
   validates :name, presence: true
   validates :description, presence: true
   validates :unit_price, presence: true
+  validates :status, presence: true
+
+  enum status: [ :disabled, :enabled ]
 
   def best_sales_day
     invoices.joins(:transactions)

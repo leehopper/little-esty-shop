@@ -8,9 +8,15 @@ RSpec.describe Item, type: :model do
   end
 
   describe 'validations' do
+    context 'presence_of'
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:description) }
     it { should validate_presence_of(:unit_price) }
+    it { should validate_presence_of(:status) }
+
+    context 'enum' do
+      it { should define_enum_for(:status).with_values([:disabled, :enabled]) }
+    end
   end
 
   describe 'instance methods' do
