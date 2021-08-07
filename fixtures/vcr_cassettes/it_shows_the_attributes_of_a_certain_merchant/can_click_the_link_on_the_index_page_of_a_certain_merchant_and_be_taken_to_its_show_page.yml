@@ -1,0 +1,654 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/repos/leehopper/little-esty-shop
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 07 Aug 2021 03:10:49 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - W/"3ee784976efe0d927a2e28023adc35087bb927dda0113d3eca7431c3d1aa1a5b"
+      Last-Modified:
+      - Thu, 05 Aug 2021 20:06:45 GMT
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation,
+        Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '14'
+      X-Ratelimit-Reset:
+      - '1628309012'
+      X-Ratelimit-Resource:
+      - core
+      X-Ratelimit-Used:
+      - '46'
+      Accept-Ranges:
+      - bytes
+      Content-Length:
+      - '2079'
+      X-Github-Request-Id:
+      - E539:4B3B:1383E28:2746B35:610DF9BB
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":393159029,"node_id":"MDEwOlJlcG9zaXRvcnkzOTMxNTkwMjk=","name":"little-esty-shop","full_name":"leehopper/little-esty-shop","private":false,"owner":{"login":"leehopper","id":82063000,"node_id":"MDQ6VXNlcjgyMDYzMDAw","avatar_url":"https://avatars.githubusercontent.com/u/82063000?v=4","gravatar_id":"","url":"https://api.github.com/users/leehopper","html_url":"https://github.com/leehopper","followers_url":"https://api.github.com/users/leehopper/followers","following_url":"https://api.github.com/users/leehopper/following{/other_user}","gists_url":"https://api.github.com/users/leehopper/gists{/gist_id}","starred_url":"https://api.github.com/users/leehopper/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/leehopper/subscriptions","organizations_url":"https://api.github.com/users/leehopper/orgs","repos_url":"https://api.github.com/users/leehopper/repos","events_url":"https://api.github.com/users/leehopper/events{/privacy}","received_events_url":"https://api.github.com/users/leehopper/received_events","type":"User","site_admin":false},"html_url":"https://github.com/leehopper/little-esty-shop","description":null,"fork":true,"url":"https://api.github.com/repos/leehopper/little-esty-shop","forks_url":"https://api.github.com/repos/leehopper/little-esty-shop/forks","keys_url":"https://api.github.com/repos/leehopper/little-esty-shop/keys{/key_id}","collaborators_url":"https://api.github.com/repos/leehopper/little-esty-shop/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/leehopper/little-esty-shop/teams","hooks_url":"https://api.github.com/repos/leehopper/little-esty-shop/hooks","issue_events_url":"https://api.github.com/repos/leehopper/little-esty-shop/issues/events{/number}","events_url":"https://api.github.com/repos/leehopper/little-esty-shop/events","assignees_url":"https://api.github.com/repos/leehopper/little-esty-shop/assignees{/user}","branches_url":"https://api.github.com/repos/leehopper/little-esty-shop/branches{/branch}","tags_url":"https://api.github.com/repos/leehopper/little-esty-shop/tags","blobs_url":"https://api.github.com/repos/leehopper/little-esty-shop/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/leehopper/little-esty-shop/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/leehopper/little-esty-shop/git/refs{/sha}","trees_url":"https://api.github.com/repos/leehopper/little-esty-shop/git/trees{/sha}","statuses_url":"https://api.github.com/repos/leehopper/little-esty-shop/statuses/{sha}","languages_url":"https://api.github.com/repos/leehopper/little-esty-shop/languages","stargazers_url":"https://api.github.com/repos/leehopper/little-esty-shop/stargazers","contributors_url":"https://api.github.com/repos/leehopper/little-esty-shop/contributors","subscribers_url":"https://api.github.com/repos/leehopper/little-esty-shop/subscribers","subscription_url":"https://api.github.com/repos/leehopper/little-esty-shop/subscription","commits_url":"https://api.github.com/repos/leehopper/little-esty-shop/commits{/sha}","git_commits_url":"https://api.github.com/repos/leehopper/little-esty-shop/git/commits{/sha}","comments_url":"https://api.github.com/repos/leehopper/little-esty-shop/comments{/number}","issue_comment_url":"https://api.github.com/repos/leehopper/little-esty-shop/issues/comments{/number}","contents_url":"https://api.github.com/repos/leehopper/little-esty-shop/contents/{+path}","compare_url":"https://api.github.com/repos/leehopper/little-esty-shop/compare/{base}...{head}","merges_url":"https://api.github.com/repos/leehopper/little-esty-shop/merges","archive_url":"https://api.github.com/repos/leehopper/little-esty-shop/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/leehopper/little-esty-shop/downloads","issues_url":"https://api.github.com/repos/leehopper/little-esty-shop/issues{/number}","pulls_url":"https://api.github.com/repos/leehopper/little-esty-shop/pulls{/number}","milestones_url":"https://api.github.com/repos/leehopper/little-esty-shop/milestones{/number}","notifications_url":"https://api.github.com/repos/leehopper/little-esty-shop/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/leehopper/little-esty-shop/labels{/name}","releases_url":"https://api.github.com/repos/leehopper/little-esty-shop/releases{/id}","deployments_url":"https://api.github.com/repos/leehopper/little-esty-shop/deployments","created_at":"2021-08-05T20:06:44Z","updated_at":"2021-08-05T20:06:45Z","pushed_at":"2021-08-05T15:54:59Z","git_url":"git://github.com/leehopper/little-esty-shop.git","ssh_url":"git@github.com:leehopper/little-esty-shop.git","clone_url":"https://github.com/leehopper/little-esty-shop.git","svn_url":"https://github.com/leehopper/little-esty-shop","homepage":null,"size":1267,"stargazers_count":0,"watchers_count":0,"language":null,"has_issues":false,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":0,"license":null,"forks":0,"open_issues":0,"watchers":0,"default_branch":"main","temp_clone_token":null,"parent":{"id":389755729,"node_id":"MDEwOlJlcG9zaXRvcnkzODk3NTU3Mjk=","name":"little-esty-shop","full_name":"gunnarrunner/little-esty-shop","private":false,"owner":{"login":"gunnarrunner","id":76886492,"node_id":"MDQ6VXNlcjc2ODg2NDky","avatar_url":"https://avatars.githubusercontent.com/u/76886492?v=4","gravatar_id":"","url":"https://api.github.com/users/gunnarrunner","html_url":"https://github.com/gunnarrunner","followers_url":"https://api.github.com/users/gunnarrunner/followers","following_url":"https://api.github.com/users/gunnarrunner/following{/other_user}","gists_url":"https://api.github.com/users/gunnarrunner/gists{/gist_id}","starred_url":"https://api.github.com/users/gunnarrunner/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/gunnarrunner/subscriptions","organizations_url":"https://api.github.com/users/gunnarrunner/orgs","repos_url":"https://api.github.com/users/gunnarrunner/repos","events_url":"https://api.github.com/users/gunnarrunner/events{/privacy}","received_events_url":"https://api.github.com/users/gunnarrunner/received_events","type":"User","site_admin":false},"html_url":"https://github.com/gunnarrunner/little-esty-shop","description":null,"fork":true,"url":"https://api.github.com/repos/gunnarrunner/little-esty-shop","forks_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/forks","keys_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/keys{/key_id}","collaborators_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/teams","hooks_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/hooks","issue_events_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/issues/events{/number}","events_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/events","assignees_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/assignees{/user}","branches_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/branches{/branch}","tags_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/tags","blobs_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/git/refs{/sha}","trees_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/git/trees{/sha}","statuses_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/statuses/{sha}","languages_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/languages","stargazers_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/stargazers","contributors_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/contributors","subscribers_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/subscribers","subscription_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/subscription","commits_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/commits{/sha}","git_commits_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/git/commits{/sha}","comments_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/comments{/number}","issue_comment_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/issues/comments{/number}","contents_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/contents/{+path}","compare_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/compare/{base}...{head}","merges_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/merges","archive_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/downloads","issues_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/issues{/number}","pulls_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/pulls{/number}","milestones_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/milestones{/number}","notifications_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/labels{/name}","releases_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/releases{/id}","deployments_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/deployments","created_at":"2021-07-26T20:08:41Z","updated_at":"2021-08-05T15:55:01Z","pushed_at":"2021-08-05T15:54:59Z","git_url":"git://github.com/gunnarrunner/little-esty-shop.git","ssh_url":"git@github.com:gunnarrunner/little-esty-shop.git","clone_url":"https://github.com/gunnarrunner/little-esty-shop.git","svn_url":"https://github.com/gunnarrunner/little-esty-shop","homepage":null,"size":1267,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":3,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":22,"license":null,"forks":3,"open_issues":22,"watchers":0,"default_branch":"main"},"source":{"id":313663245,"node_id":"MDEwOlJlcG9zaXRvcnkzMTM2NjMyNDU=","name":"little-esty-shop","full_name":"turingschool-examples/little-esty-shop","private":false,"owner":{"login":"turingschool-examples","id":8518346,"node_id":"MDEyOk9yZ2FuaXphdGlvbjg1MTgzNDY=","avatar_url":"https://avatars.githubusercontent.com/u/8518346?v=4","gravatar_id":"","url":"https://api.github.com/users/turingschool-examples","html_url":"https://github.com/turingschool-examples","followers_url":"https://api.github.com/users/turingschool-examples/followers","following_url":"https://api.github.com/users/turingschool-examples/following{/other_user}","gists_url":"https://api.github.com/users/turingschool-examples/gists{/gist_id}","starred_url":"https://api.github.com/users/turingschool-examples/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/turingschool-examples/subscriptions","organizations_url":"https://api.github.com/users/turingschool-examples/orgs","repos_url":"https://api.github.com/users/turingschool-examples/repos","events_url":"https://api.github.com/users/turingschool-examples/events{/privacy}","received_events_url":"https://api.github.com/users/turingschool-examples/received_events","type":"Organization","site_admin":false},"html_url":"https://github.com/turingschool-examples/little-esty-shop","description":null,"fork":false,"url":"https://api.github.com/repos/turingschool-examples/little-esty-shop","forks_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/forks","keys_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/keys{/key_id}","collaborators_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/teams","hooks_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/hooks","issue_events_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/issues/events{/number}","events_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/events","assignees_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/assignees{/user}","branches_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/branches{/branch}","tags_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/tags","blobs_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/git/refs{/sha}","trees_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/git/trees{/sha}","statuses_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/statuses/{sha}","languages_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/languages","stargazers_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/stargazers","contributors_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/contributors","subscribers_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/subscribers","subscription_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/subscription","commits_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/commits{/sha}","git_commits_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/git/commits{/sha}","comments_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/comments{/number}","issue_comment_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/issues/comments{/number}","contents_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/contents/{+path}","compare_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/compare/{base}...{head}","merges_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/merges","archive_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/downloads","issues_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/issues{/number}","pulls_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/pulls{/number}","milestones_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/milestones{/number}","notifications_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/labels{/name}","releases_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/releases{/id}","deployments_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/deployments","created_at":"2020-11-17T15:33:36Z","updated_at":"2021-07-30T16:07:23Z","pushed_at":"2021-08-04T23:21:38Z","git_url":"git://github.com/turingschool-examples/little-esty-shop.git","ssh_url":"git@github.com:turingschool-examples/little-esty-shop.git","clone_url":"https://github.com/turingschool-examples/little-esty-shop.git","svn_url":"https://github.com/turingschool-examples/little-esty-shop","homepage":null,"size":1073,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":112,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":49,"license":null,"forks":112,"open_issues":49,"watchers":0,"default_branch":"main"},"network_count":112,"subscribers_count":0}'
+  recorded_at: Sat, 07 Aug 2021 03:10:51 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/leehopper/little-esty-shop/pulls?state=closed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 07 Aug 2021 03:10:50 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2'
+      Cache-Control:
+      - public, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - '"992aaf92b487506974e4305db4a64326866f3ed48b2ba424cef8fbe4e28f72b0"'
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation,
+        Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '13'
+      X-Ratelimit-Reset:
+      - '1628309012'
+      X-Ratelimit-Resource:
+      - core
+      X-Ratelimit-Used:
+      - '47'
+      Accept-Ranges:
+      - bytes
+      X-Github-Request-Id:
+      - E53A:0D97:69288D:F18166:610DF9BB
+    body:
+      encoding: UTF-8
+      string: "[]"
+  recorded_at: Sat, 07 Aug 2021 03:10:51 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/leehopper/little-esty-shop/contributors
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 07 Aug 2021 03:10:50 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - W/"94bf5c66b57e640e5fbaebe5d82e80c02ba3c0139d1d8331ea24e164573ae2e8"
+      Last-Modified:
+      - Thu, 05 Aug 2021 20:06:45 GMT
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation,
+        Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '12'
+      X-Ratelimit-Reset:
+      - '1628309013'
+      X-Ratelimit-Resource:
+      - core
+      X-Ratelimit-Used:
+      - '48'
+      Accept-Ranges:
+      - bytes
+      Content-Length:
+      - '939'
+      X-Github-Request-Id:
+      - E53B:7042:147F0A0:289A737:610DF9BC
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"login":"Jacobmar13","id":80134340,"node_id":"MDQ6VXNlcjgwMTM0MzQw","avatar_url":"https://avatars.githubusercontent.com/u/80134340?v=4","gravatar_id":"","url":"https://api.github.com/users/Jacobmar13","html_url":"https://github.com/Jacobmar13","followers_url":"https://api.github.com/users/Jacobmar13/followers","following_url":"https://api.github.com/users/Jacobmar13/following{/other_user}","gists_url":"https://api.github.com/users/Jacobmar13/gists{/gist_id}","starred_url":"https://api.github.com/users/Jacobmar13/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Jacobmar13/subscriptions","organizations_url":"https://api.github.com/users/Jacobmar13/orgs","repos_url":"https://api.github.com/users/Jacobmar13/repos","events_url":"https://api.github.com/users/Jacobmar13/events{/privacy}","received_events_url":"https://api.github.com/users/Jacobmar13/received_events","type":"User","site_admin":false,"contributions":88},{"login":"antoniojking","id":81713591,"node_id":"MDQ6VXNlcjgxNzEzNTkx","avatar_url":"https://avatars.githubusercontent.com/u/81713591?v=4","gravatar_id":"","url":"https://api.github.com/users/antoniojking","html_url":"https://github.com/antoniojking","followers_url":"https://api.github.com/users/antoniojking/followers","following_url":"https://api.github.com/users/antoniojking/following{/other_user}","gists_url":"https://api.github.com/users/antoniojking/gists{/gist_id}","starred_url":"https://api.github.com/users/antoniojking/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/antoniojking/subscriptions","organizations_url":"https://api.github.com/users/antoniojking/orgs","repos_url":"https://api.github.com/users/antoniojking/repos","events_url":"https://api.github.com/users/antoniojking/events{/privacy}","received_events_url":"https://api.github.com/users/antoniojking/received_events","type":"User","site_admin":false,"contributions":51},{"login":"BrianZanti","id":8962411,"node_id":"MDQ6VXNlcjg5NjI0MTE=","avatar_url":"https://avatars.githubusercontent.com/u/8962411?v=4","gravatar_id":"","url":"https://api.github.com/users/BrianZanti","html_url":"https://github.com/BrianZanti","followers_url":"https://api.github.com/users/BrianZanti/followers","following_url":"https://api.github.com/users/BrianZanti/following{/other_user}","gists_url":"https://api.github.com/users/BrianZanti/gists{/gist_id}","starred_url":"https://api.github.com/users/BrianZanti/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/BrianZanti/subscriptions","organizations_url":"https://api.github.com/users/BrianZanti/orgs","repos_url":"https://api.github.com/users/BrianZanti/repos","events_url":"https://api.github.com/users/BrianZanti/events{/privacy}","received_events_url":"https://api.github.com/users/BrianZanti/received_events","type":"User","site_admin":false,"contributions":51},{"login":"leehopper","id":82063000,"node_id":"MDQ6VXNlcjgyMDYzMDAw","avatar_url":"https://avatars.githubusercontent.com/u/82063000?v=4","gravatar_id":"","url":"https://api.github.com/users/leehopper","html_url":"https://github.com/leehopper","followers_url":"https://api.github.com/users/leehopper/followers","following_url":"https://api.github.com/users/leehopper/following{/other_user}","gists_url":"https://api.github.com/users/leehopper/gists{/gist_id}","starred_url":"https://api.github.com/users/leehopper/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/leehopper/subscriptions","organizations_url":"https://api.github.com/users/leehopper/orgs","repos_url":"https://api.github.com/users/leehopper/repos","events_url":"https://api.github.com/users/leehopper/events{/privacy}","received_events_url":"https://api.github.com/users/leehopper/received_events","type":"User","site_admin":false,"contributions":38},{"login":"gunnarrunner","id":76886492,"node_id":"MDQ6VXNlcjc2ODg2NDky","avatar_url":"https://avatars.githubusercontent.com/u/76886492?v=4","gravatar_id":"","url":"https://api.github.com/users/gunnarrunner","html_url":"https://github.com/gunnarrunner","followers_url":"https://api.github.com/users/gunnarrunner/followers","following_url":"https://api.github.com/users/gunnarrunner/following{/other_user}","gists_url":"https://api.github.com/users/gunnarrunner/gists{/gist_id}","starred_url":"https://api.github.com/users/gunnarrunner/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/gunnarrunner/subscriptions","organizations_url":"https://api.github.com/users/gunnarrunner/orgs","repos_url":"https://api.github.com/users/gunnarrunner/repos","events_url":"https://api.github.com/users/gunnarrunner/events{/privacy}","received_events_url":"https://api.github.com/users/gunnarrunner/received_events","type":"User","site_admin":false,"contributions":17},{"login":"timomitchel","id":23040094,"node_id":"MDQ6VXNlcjIzMDQwMDk0","avatar_url":"https://avatars.githubusercontent.com/u/23040094?v=4","gravatar_id":"","url":"https://api.github.com/users/timomitchel","html_url":"https://github.com/timomitchel","followers_url":"https://api.github.com/users/timomitchel/followers","following_url":"https://api.github.com/users/timomitchel/following{/other_user}","gists_url":"https://api.github.com/users/timomitchel/gists{/gist_id}","starred_url":"https://api.github.com/users/timomitchel/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/timomitchel/subscriptions","organizations_url":"https://api.github.com/users/timomitchel/orgs","repos_url":"https://api.github.com/users/timomitchel/repos","events_url":"https://api.github.com/users/timomitchel/events{/privacy}","received_events_url":"https://api.github.com/users/timomitchel/received_events","type":"User","site_admin":false,"contributions":9},{"login":"scottalexandra","id":8812335,"node_id":"MDQ6VXNlcjg4MTIzMzU=","avatar_url":"https://avatars.githubusercontent.com/u/8812335?v=4","gravatar_id":"","url":"https://api.github.com/users/scottalexandra","html_url":"https://github.com/scottalexandra","followers_url":"https://api.github.com/users/scottalexandra/followers","following_url":"https://api.github.com/users/scottalexandra/following{/other_user}","gists_url":"https://api.github.com/users/scottalexandra/gists{/gist_id}","starred_url":"https://api.github.com/users/scottalexandra/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/scottalexandra/subscriptions","organizations_url":"https://api.github.com/users/scottalexandra/orgs","repos_url":"https://api.github.com/users/scottalexandra/repos","events_url":"https://api.github.com/users/scottalexandra/events{/privacy}","received_events_url":"https://api.github.com/users/scottalexandra/received_events","type":"User","site_admin":false,"contributions":3},{"login":"jamisonordway","id":33180544,"node_id":"MDQ6VXNlcjMzMTgwNTQ0","avatar_url":"https://avatars.githubusercontent.com/u/33180544?v=4","gravatar_id":"","url":"https://api.github.com/users/jamisonordway","html_url":"https://github.com/jamisonordway","followers_url":"https://api.github.com/users/jamisonordway/followers","following_url":"https://api.github.com/users/jamisonordway/following{/other_user}","gists_url":"https://api.github.com/users/jamisonordway/gists{/gist_id}","starred_url":"https://api.github.com/users/jamisonordway/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/jamisonordway/subscriptions","organizations_url":"https://api.github.com/users/jamisonordway/orgs","repos_url":"https://api.github.com/users/jamisonordway/repos","events_url":"https://api.github.com/users/jamisonordway/events{/privacy}","received_events_url":"https://api.github.com/users/jamisonordway/received_events","type":"User","site_admin":false,"contributions":1}]'
+  recorded_at: Sat, 07 Aug 2021 03:10:52 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/leehopper/little-esty-shop
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 07 Aug 2021 03:10:49 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - W/"3ee784976efe0d927a2e28023adc35087bb927dda0113d3eca7431c3d1aa1a5b"
+      Last-Modified:
+      - Thu, 05 Aug 2021 20:06:45 GMT
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation,
+        Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '11'
+      X-Ratelimit-Reset:
+      - '1628309013'
+      X-Ratelimit-Resource:
+      - core
+      X-Ratelimit-Used:
+      - '49'
+      Accept-Ranges:
+      - bytes
+      Content-Length:
+      - '2079'
+      X-Github-Request-Id:
+      - E53C:023E:35CAE6:BE9AA7:610DF9BC
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":393159029,"node_id":"MDEwOlJlcG9zaXRvcnkzOTMxNTkwMjk=","name":"little-esty-shop","full_name":"leehopper/little-esty-shop","private":false,"owner":{"login":"leehopper","id":82063000,"node_id":"MDQ6VXNlcjgyMDYzMDAw","avatar_url":"https://avatars.githubusercontent.com/u/82063000?v=4","gravatar_id":"","url":"https://api.github.com/users/leehopper","html_url":"https://github.com/leehopper","followers_url":"https://api.github.com/users/leehopper/followers","following_url":"https://api.github.com/users/leehopper/following{/other_user}","gists_url":"https://api.github.com/users/leehopper/gists{/gist_id}","starred_url":"https://api.github.com/users/leehopper/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/leehopper/subscriptions","organizations_url":"https://api.github.com/users/leehopper/orgs","repos_url":"https://api.github.com/users/leehopper/repos","events_url":"https://api.github.com/users/leehopper/events{/privacy}","received_events_url":"https://api.github.com/users/leehopper/received_events","type":"User","site_admin":false},"html_url":"https://github.com/leehopper/little-esty-shop","description":null,"fork":true,"url":"https://api.github.com/repos/leehopper/little-esty-shop","forks_url":"https://api.github.com/repos/leehopper/little-esty-shop/forks","keys_url":"https://api.github.com/repos/leehopper/little-esty-shop/keys{/key_id}","collaborators_url":"https://api.github.com/repos/leehopper/little-esty-shop/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/leehopper/little-esty-shop/teams","hooks_url":"https://api.github.com/repos/leehopper/little-esty-shop/hooks","issue_events_url":"https://api.github.com/repos/leehopper/little-esty-shop/issues/events{/number}","events_url":"https://api.github.com/repos/leehopper/little-esty-shop/events","assignees_url":"https://api.github.com/repos/leehopper/little-esty-shop/assignees{/user}","branches_url":"https://api.github.com/repos/leehopper/little-esty-shop/branches{/branch}","tags_url":"https://api.github.com/repos/leehopper/little-esty-shop/tags","blobs_url":"https://api.github.com/repos/leehopper/little-esty-shop/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/leehopper/little-esty-shop/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/leehopper/little-esty-shop/git/refs{/sha}","trees_url":"https://api.github.com/repos/leehopper/little-esty-shop/git/trees{/sha}","statuses_url":"https://api.github.com/repos/leehopper/little-esty-shop/statuses/{sha}","languages_url":"https://api.github.com/repos/leehopper/little-esty-shop/languages","stargazers_url":"https://api.github.com/repos/leehopper/little-esty-shop/stargazers","contributors_url":"https://api.github.com/repos/leehopper/little-esty-shop/contributors","subscribers_url":"https://api.github.com/repos/leehopper/little-esty-shop/subscribers","subscription_url":"https://api.github.com/repos/leehopper/little-esty-shop/subscription","commits_url":"https://api.github.com/repos/leehopper/little-esty-shop/commits{/sha}","git_commits_url":"https://api.github.com/repos/leehopper/little-esty-shop/git/commits{/sha}","comments_url":"https://api.github.com/repos/leehopper/little-esty-shop/comments{/number}","issue_comment_url":"https://api.github.com/repos/leehopper/little-esty-shop/issues/comments{/number}","contents_url":"https://api.github.com/repos/leehopper/little-esty-shop/contents/{+path}","compare_url":"https://api.github.com/repos/leehopper/little-esty-shop/compare/{base}...{head}","merges_url":"https://api.github.com/repos/leehopper/little-esty-shop/merges","archive_url":"https://api.github.com/repos/leehopper/little-esty-shop/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/leehopper/little-esty-shop/downloads","issues_url":"https://api.github.com/repos/leehopper/little-esty-shop/issues{/number}","pulls_url":"https://api.github.com/repos/leehopper/little-esty-shop/pulls{/number}","milestones_url":"https://api.github.com/repos/leehopper/little-esty-shop/milestones{/number}","notifications_url":"https://api.github.com/repos/leehopper/little-esty-shop/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/leehopper/little-esty-shop/labels{/name}","releases_url":"https://api.github.com/repos/leehopper/little-esty-shop/releases{/id}","deployments_url":"https://api.github.com/repos/leehopper/little-esty-shop/deployments","created_at":"2021-08-05T20:06:44Z","updated_at":"2021-08-05T20:06:45Z","pushed_at":"2021-08-05T15:54:59Z","git_url":"git://github.com/leehopper/little-esty-shop.git","ssh_url":"git@github.com:leehopper/little-esty-shop.git","clone_url":"https://github.com/leehopper/little-esty-shop.git","svn_url":"https://github.com/leehopper/little-esty-shop","homepage":null,"size":1267,"stargazers_count":0,"watchers_count":0,"language":null,"has_issues":false,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":0,"license":null,"forks":0,"open_issues":0,"watchers":0,"default_branch":"main","temp_clone_token":null,"parent":{"id":389755729,"node_id":"MDEwOlJlcG9zaXRvcnkzODk3NTU3Mjk=","name":"little-esty-shop","full_name":"gunnarrunner/little-esty-shop","private":false,"owner":{"login":"gunnarrunner","id":76886492,"node_id":"MDQ6VXNlcjc2ODg2NDky","avatar_url":"https://avatars.githubusercontent.com/u/76886492?v=4","gravatar_id":"","url":"https://api.github.com/users/gunnarrunner","html_url":"https://github.com/gunnarrunner","followers_url":"https://api.github.com/users/gunnarrunner/followers","following_url":"https://api.github.com/users/gunnarrunner/following{/other_user}","gists_url":"https://api.github.com/users/gunnarrunner/gists{/gist_id}","starred_url":"https://api.github.com/users/gunnarrunner/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/gunnarrunner/subscriptions","organizations_url":"https://api.github.com/users/gunnarrunner/orgs","repos_url":"https://api.github.com/users/gunnarrunner/repos","events_url":"https://api.github.com/users/gunnarrunner/events{/privacy}","received_events_url":"https://api.github.com/users/gunnarrunner/received_events","type":"User","site_admin":false},"html_url":"https://github.com/gunnarrunner/little-esty-shop","description":null,"fork":true,"url":"https://api.github.com/repos/gunnarrunner/little-esty-shop","forks_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/forks","keys_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/keys{/key_id}","collaborators_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/teams","hooks_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/hooks","issue_events_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/issues/events{/number}","events_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/events","assignees_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/assignees{/user}","branches_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/branches{/branch}","tags_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/tags","blobs_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/git/refs{/sha}","trees_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/git/trees{/sha}","statuses_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/statuses/{sha}","languages_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/languages","stargazers_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/stargazers","contributors_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/contributors","subscribers_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/subscribers","subscription_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/subscription","commits_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/commits{/sha}","git_commits_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/git/commits{/sha}","comments_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/comments{/number}","issue_comment_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/issues/comments{/number}","contents_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/contents/{+path}","compare_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/compare/{base}...{head}","merges_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/merges","archive_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/downloads","issues_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/issues{/number}","pulls_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/pulls{/number}","milestones_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/milestones{/number}","notifications_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/labels{/name}","releases_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/releases{/id}","deployments_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/deployments","created_at":"2021-07-26T20:08:41Z","updated_at":"2021-08-05T15:55:01Z","pushed_at":"2021-08-05T15:54:59Z","git_url":"git://github.com/gunnarrunner/little-esty-shop.git","ssh_url":"git@github.com:gunnarrunner/little-esty-shop.git","clone_url":"https://github.com/gunnarrunner/little-esty-shop.git","svn_url":"https://github.com/gunnarrunner/little-esty-shop","homepage":null,"size":1267,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":3,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":22,"license":null,"forks":3,"open_issues":22,"watchers":0,"default_branch":"main"},"source":{"id":313663245,"node_id":"MDEwOlJlcG9zaXRvcnkzMTM2NjMyNDU=","name":"little-esty-shop","full_name":"turingschool-examples/little-esty-shop","private":false,"owner":{"login":"turingschool-examples","id":8518346,"node_id":"MDEyOk9yZ2FuaXphdGlvbjg1MTgzNDY=","avatar_url":"https://avatars.githubusercontent.com/u/8518346?v=4","gravatar_id":"","url":"https://api.github.com/users/turingschool-examples","html_url":"https://github.com/turingschool-examples","followers_url":"https://api.github.com/users/turingschool-examples/followers","following_url":"https://api.github.com/users/turingschool-examples/following{/other_user}","gists_url":"https://api.github.com/users/turingschool-examples/gists{/gist_id}","starred_url":"https://api.github.com/users/turingschool-examples/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/turingschool-examples/subscriptions","organizations_url":"https://api.github.com/users/turingschool-examples/orgs","repos_url":"https://api.github.com/users/turingschool-examples/repos","events_url":"https://api.github.com/users/turingschool-examples/events{/privacy}","received_events_url":"https://api.github.com/users/turingschool-examples/received_events","type":"Organization","site_admin":false},"html_url":"https://github.com/turingschool-examples/little-esty-shop","description":null,"fork":false,"url":"https://api.github.com/repos/turingschool-examples/little-esty-shop","forks_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/forks","keys_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/keys{/key_id}","collaborators_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/teams","hooks_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/hooks","issue_events_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/issues/events{/number}","events_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/events","assignees_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/assignees{/user}","branches_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/branches{/branch}","tags_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/tags","blobs_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/git/refs{/sha}","trees_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/git/trees{/sha}","statuses_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/statuses/{sha}","languages_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/languages","stargazers_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/stargazers","contributors_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/contributors","subscribers_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/subscribers","subscription_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/subscription","commits_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/commits{/sha}","git_commits_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/git/commits{/sha}","comments_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/comments{/number}","issue_comment_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/issues/comments{/number}","contents_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/contents/{+path}","compare_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/compare/{base}...{head}","merges_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/merges","archive_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/downloads","issues_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/issues{/number}","pulls_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/pulls{/number}","milestones_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/milestones{/number}","notifications_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/labels{/name}","releases_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/releases{/id}","deployments_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/deployments","created_at":"2020-11-17T15:33:36Z","updated_at":"2021-07-30T16:07:23Z","pushed_at":"2021-08-04T23:21:38Z","git_url":"git://github.com/turingschool-examples/little-esty-shop.git","ssh_url":"git@github.com:turingschool-examples/little-esty-shop.git","clone_url":"https://github.com/turingschool-examples/little-esty-shop.git","svn_url":"https://github.com/turingschool-examples/little-esty-shop","homepage":null,"size":1073,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":112,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":49,"license":null,"forks":112,"open_issues":49,"watchers":0,"default_branch":"main"},"network_count":112,"subscribers_count":0}'
+  recorded_at: Sat, 07 Aug 2021 03:10:52 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/leehopper/little-esty-shop/pulls?state=closed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 07 Aug 2021 03:10:50 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2'
+      Cache-Control:
+      - public, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - '"992aaf92b487506974e4305db4a64326866f3ed48b2ba424cef8fbe4e28f72b0"'
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation,
+        Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '10'
+      X-Ratelimit-Reset:
+      - '1628309012'
+      X-Ratelimit-Resource:
+      - core
+      X-Ratelimit-Used:
+      - '50'
+      Accept-Ranges:
+      - bytes
+      X-Github-Request-Id:
+      - E53D:1DDB:FB36FE:2DC7B8C:610DF9BC
+    body:
+      encoding: UTF-8
+      string: "[]"
+  recorded_at: Sat, 07 Aug 2021 03:10:52 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/leehopper/little-esty-shop/contributors
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 07 Aug 2021 03:10:50 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - W/"94bf5c66b57e640e5fbaebe5d82e80c02ba3c0139d1d8331ea24e164573ae2e8"
+      Last-Modified:
+      - Thu, 05 Aug 2021 20:06:45 GMT
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation,
+        Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '9'
+      X-Ratelimit-Reset:
+      - '1628309012'
+      X-Ratelimit-Resource:
+      - core
+      X-Ratelimit-Used:
+      - '51'
+      Accept-Ranges:
+      - bytes
+      Content-Length:
+      - '939'
+      X-Github-Request-Id:
+      - E53E:0241:14FB0D5:2981F08:610DF9BC
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"login":"Jacobmar13","id":80134340,"node_id":"MDQ6VXNlcjgwMTM0MzQw","avatar_url":"https://avatars.githubusercontent.com/u/80134340?v=4","gravatar_id":"","url":"https://api.github.com/users/Jacobmar13","html_url":"https://github.com/Jacobmar13","followers_url":"https://api.github.com/users/Jacobmar13/followers","following_url":"https://api.github.com/users/Jacobmar13/following{/other_user}","gists_url":"https://api.github.com/users/Jacobmar13/gists{/gist_id}","starred_url":"https://api.github.com/users/Jacobmar13/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Jacobmar13/subscriptions","organizations_url":"https://api.github.com/users/Jacobmar13/orgs","repos_url":"https://api.github.com/users/Jacobmar13/repos","events_url":"https://api.github.com/users/Jacobmar13/events{/privacy}","received_events_url":"https://api.github.com/users/Jacobmar13/received_events","type":"User","site_admin":false,"contributions":88},{"login":"antoniojking","id":81713591,"node_id":"MDQ6VXNlcjgxNzEzNTkx","avatar_url":"https://avatars.githubusercontent.com/u/81713591?v=4","gravatar_id":"","url":"https://api.github.com/users/antoniojking","html_url":"https://github.com/antoniojking","followers_url":"https://api.github.com/users/antoniojking/followers","following_url":"https://api.github.com/users/antoniojking/following{/other_user}","gists_url":"https://api.github.com/users/antoniojking/gists{/gist_id}","starred_url":"https://api.github.com/users/antoniojking/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/antoniojking/subscriptions","organizations_url":"https://api.github.com/users/antoniojking/orgs","repos_url":"https://api.github.com/users/antoniojking/repos","events_url":"https://api.github.com/users/antoniojking/events{/privacy}","received_events_url":"https://api.github.com/users/antoniojking/received_events","type":"User","site_admin":false,"contributions":51},{"login":"BrianZanti","id":8962411,"node_id":"MDQ6VXNlcjg5NjI0MTE=","avatar_url":"https://avatars.githubusercontent.com/u/8962411?v=4","gravatar_id":"","url":"https://api.github.com/users/BrianZanti","html_url":"https://github.com/BrianZanti","followers_url":"https://api.github.com/users/BrianZanti/followers","following_url":"https://api.github.com/users/BrianZanti/following{/other_user}","gists_url":"https://api.github.com/users/BrianZanti/gists{/gist_id}","starred_url":"https://api.github.com/users/BrianZanti/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/BrianZanti/subscriptions","organizations_url":"https://api.github.com/users/BrianZanti/orgs","repos_url":"https://api.github.com/users/BrianZanti/repos","events_url":"https://api.github.com/users/BrianZanti/events{/privacy}","received_events_url":"https://api.github.com/users/BrianZanti/received_events","type":"User","site_admin":false,"contributions":51},{"login":"leehopper","id":82063000,"node_id":"MDQ6VXNlcjgyMDYzMDAw","avatar_url":"https://avatars.githubusercontent.com/u/82063000?v=4","gravatar_id":"","url":"https://api.github.com/users/leehopper","html_url":"https://github.com/leehopper","followers_url":"https://api.github.com/users/leehopper/followers","following_url":"https://api.github.com/users/leehopper/following{/other_user}","gists_url":"https://api.github.com/users/leehopper/gists{/gist_id}","starred_url":"https://api.github.com/users/leehopper/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/leehopper/subscriptions","organizations_url":"https://api.github.com/users/leehopper/orgs","repos_url":"https://api.github.com/users/leehopper/repos","events_url":"https://api.github.com/users/leehopper/events{/privacy}","received_events_url":"https://api.github.com/users/leehopper/received_events","type":"User","site_admin":false,"contributions":38},{"login":"gunnarrunner","id":76886492,"node_id":"MDQ6VXNlcjc2ODg2NDky","avatar_url":"https://avatars.githubusercontent.com/u/76886492?v=4","gravatar_id":"","url":"https://api.github.com/users/gunnarrunner","html_url":"https://github.com/gunnarrunner","followers_url":"https://api.github.com/users/gunnarrunner/followers","following_url":"https://api.github.com/users/gunnarrunner/following{/other_user}","gists_url":"https://api.github.com/users/gunnarrunner/gists{/gist_id}","starred_url":"https://api.github.com/users/gunnarrunner/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/gunnarrunner/subscriptions","organizations_url":"https://api.github.com/users/gunnarrunner/orgs","repos_url":"https://api.github.com/users/gunnarrunner/repos","events_url":"https://api.github.com/users/gunnarrunner/events{/privacy}","received_events_url":"https://api.github.com/users/gunnarrunner/received_events","type":"User","site_admin":false,"contributions":17},{"login":"timomitchel","id":23040094,"node_id":"MDQ6VXNlcjIzMDQwMDk0","avatar_url":"https://avatars.githubusercontent.com/u/23040094?v=4","gravatar_id":"","url":"https://api.github.com/users/timomitchel","html_url":"https://github.com/timomitchel","followers_url":"https://api.github.com/users/timomitchel/followers","following_url":"https://api.github.com/users/timomitchel/following{/other_user}","gists_url":"https://api.github.com/users/timomitchel/gists{/gist_id}","starred_url":"https://api.github.com/users/timomitchel/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/timomitchel/subscriptions","organizations_url":"https://api.github.com/users/timomitchel/orgs","repos_url":"https://api.github.com/users/timomitchel/repos","events_url":"https://api.github.com/users/timomitchel/events{/privacy}","received_events_url":"https://api.github.com/users/timomitchel/received_events","type":"User","site_admin":false,"contributions":9},{"login":"scottalexandra","id":8812335,"node_id":"MDQ6VXNlcjg4MTIzMzU=","avatar_url":"https://avatars.githubusercontent.com/u/8812335?v=4","gravatar_id":"","url":"https://api.github.com/users/scottalexandra","html_url":"https://github.com/scottalexandra","followers_url":"https://api.github.com/users/scottalexandra/followers","following_url":"https://api.github.com/users/scottalexandra/following{/other_user}","gists_url":"https://api.github.com/users/scottalexandra/gists{/gist_id}","starred_url":"https://api.github.com/users/scottalexandra/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/scottalexandra/subscriptions","organizations_url":"https://api.github.com/users/scottalexandra/orgs","repos_url":"https://api.github.com/users/scottalexandra/repos","events_url":"https://api.github.com/users/scottalexandra/events{/privacy}","received_events_url":"https://api.github.com/users/scottalexandra/received_events","type":"User","site_admin":false,"contributions":3},{"login":"jamisonordway","id":33180544,"node_id":"MDQ6VXNlcjMzMTgwNTQ0","avatar_url":"https://avatars.githubusercontent.com/u/33180544?v=4","gravatar_id":"","url":"https://api.github.com/users/jamisonordway","html_url":"https://github.com/jamisonordway","followers_url":"https://api.github.com/users/jamisonordway/followers","following_url":"https://api.github.com/users/jamisonordway/following{/other_user}","gists_url":"https://api.github.com/users/jamisonordway/gists{/gist_id}","starred_url":"https://api.github.com/users/jamisonordway/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/jamisonordway/subscriptions","organizations_url":"https://api.github.com/users/jamisonordway/orgs","repos_url":"https://api.github.com/users/jamisonordway/repos","events_url":"https://api.github.com/users/jamisonordway/events{/privacy}","received_events_url":"https://api.github.com/users/jamisonordway/received_events","type":"User","site_admin":false,"contributions":1}]'
+  recorded_at: Sat, 07 Aug 2021 03:10:52 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/leehopper/little-esty-shop
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 07 Aug 2021 03:10:49 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - W/"3ee784976efe0d927a2e28023adc35087bb927dda0113d3eca7431c3d1aa1a5b"
+      Last-Modified:
+      - Thu, 05 Aug 2021 20:06:45 GMT
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation,
+        Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '8'
+      X-Ratelimit-Reset:
+      - '1628309012'
+      X-Ratelimit-Resource:
+      - core
+      X-Ratelimit-Used:
+      - '52'
+      Accept-Ranges:
+      - bytes
+      Content-Length:
+      - '2079'
+      X-Github-Request-Id:
+      - E53F:0CF2:1672A2D:2B2B11D:610DF9BC
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":393159029,"node_id":"MDEwOlJlcG9zaXRvcnkzOTMxNTkwMjk=","name":"little-esty-shop","full_name":"leehopper/little-esty-shop","private":false,"owner":{"login":"leehopper","id":82063000,"node_id":"MDQ6VXNlcjgyMDYzMDAw","avatar_url":"https://avatars.githubusercontent.com/u/82063000?v=4","gravatar_id":"","url":"https://api.github.com/users/leehopper","html_url":"https://github.com/leehopper","followers_url":"https://api.github.com/users/leehopper/followers","following_url":"https://api.github.com/users/leehopper/following{/other_user}","gists_url":"https://api.github.com/users/leehopper/gists{/gist_id}","starred_url":"https://api.github.com/users/leehopper/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/leehopper/subscriptions","organizations_url":"https://api.github.com/users/leehopper/orgs","repos_url":"https://api.github.com/users/leehopper/repos","events_url":"https://api.github.com/users/leehopper/events{/privacy}","received_events_url":"https://api.github.com/users/leehopper/received_events","type":"User","site_admin":false},"html_url":"https://github.com/leehopper/little-esty-shop","description":null,"fork":true,"url":"https://api.github.com/repos/leehopper/little-esty-shop","forks_url":"https://api.github.com/repos/leehopper/little-esty-shop/forks","keys_url":"https://api.github.com/repos/leehopper/little-esty-shop/keys{/key_id}","collaborators_url":"https://api.github.com/repos/leehopper/little-esty-shop/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/leehopper/little-esty-shop/teams","hooks_url":"https://api.github.com/repos/leehopper/little-esty-shop/hooks","issue_events_url":"https://api.github.com/repos/leehopper/little-esty-shop/issues/events{/number}","events_url":"https://api.github.com/repos/leehopper/little-esty-shop/events","assignees_url":"https://api.github.com/repos/leehopper/little-esty-shop/assignees{/user}","branches_url":"https://api.github.com/repos/leehopper/little-esty-shop/branches{/branch}","tags_url":"https://api.github.com/repos/leehopper/little-esty-shop/tags","blobs_url":"https://api.github.com/repos/leehopper/little-esty-shop/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/leehopper/little-esty-shop/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/leehopper/little-esty-shop/git/refs{/sha}","trees_url":"https://api.github.com/repos/leehopper/little-esty-shop/git/trees{/sha}","statuses_url":"https://api.github.com/repos/leehopper/little-esty-shop/statuses/{sha}","languages_url":"https://api.github.com/repos/leehopper/little-esty-shop/languages","stargazers_url":"https://api.github.com/repos/leehopper/little-esty-shop/stargazers","contributors_url":"https://api.github.com/repos/leehopper/little-esty-shop/contributors","subscribers_url":"https://api.github.com/repos/leehopper/little-esty-shop/subscribers","subscription_url":"https://api.github.com/repos/leehopper/little-esty-shop/subscription","commits_url":"https://api.github.com/repos/leehopper/little-esty-shop/commits{/sha}","git_commits_url":"https://api.github.com/repos/leehopper/little-esty-shop/git/commits{/sha}","comments_url":"https://api.github.com/repos/leehopper/little-esty-shop/comments{/number}","issue_comment_url":"https://api.github.com/repos/leehopper/little-esty-shop/issues/comments{/number}","contents_url":"https://api.github.com/repos/leehopper/little-esty-shop/contents/{+path}","compare_url":"https://api.github.com/repos/leehopper/little-esty-shop/compare/{base}...{head}","merges_url":"https://api.github.com/repos/leehopper/little-esty-shop/merges","archive_url":"https://api.github.com/repos/leehopper/little-esty-shop/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/leehopper/little-esty-shop/downloads","issues_url":"https://api.github.com/repos/leehopper/little-esty-shop/issues{/number}","pulls_url":"https://api.github.com/repos/leehopper/little-esty-shop/pulls{/number}","milestones_url":"https://api.github.com/repos/leehopper/little-esty-shop/milestones{/number}","notifications_url":"https://api.github.com/repos/leehopper/little-esty-shop/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/leehopper/little-esty-shop/labels{/name}","releases_url":"https://api.github.com/repos/leehopper/little-esty-shop/releases{/id}","deployments_url":"https://api.github.com/repos/leehopper/little-esty-shop/deployments","created_at":"2021-08-05T20:06:44Z","updated_at":"2021-08-05T20:06:45Z","pushed_at":"2021-08-05T15:54:59Z","git_url":"git://github.com/leehopper/little-esty-shop.git","ssh_url":"git@github.com:leehopper/little-esty-shop.git","clone_url":"https://github.com/leehopper/little-esty-shop.git","svn_url":"https://github.com/leehopper/little-esty-shop","homepage":null,"size":1267,"stargazers_count":0,"watchers_count":0,"language":null,"has_issues":false,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":0,"license":null,"forks":0,"open_issues":0,"watchers":0,"default_branch":"main","temp_clone_token":null,"parent":{"id":389755729,"node_id":"MDEwOlJlcG9zaXRvcnkzODk3NTU3Mjk=","name":"little-esty-shop","full_name":"gunnarrunner/little-esty-shop","private":false,"owner":{"login":"gunnarrunner","id":76886492,"node_id":"MDQ6VXNlcjc2ODg2NDky","avatar_url":"https://avatars.githubusercontent.com/u/76886492?v=4","gravatar_id":"","url":"https://api.github.com/users/gunnarrunner","html_url":"https://github.com/gunnarrunner","followers_url":"https://api.github.com/users/gunnarrunner/followers","following_url":"https://api.github.com/users/gunnarrunner/following{/other_user}","gists_url":"https://api.github.com/users/gunnarrunner/gists{/gist_id}","starred_url":"https://api.github.com/users/gunnarrunner/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/gunnarrunner/subscriptions","organizations_url":"https://api.github.com/users/gunnarrunner/orgs","repos_url":"https://api.github.com/users/gunnarrunner/repos","events_url":"https://api.github.com/users/gunnarrunner/events{/privacy}","received_events_url":"https://api.github.com/users/gunnarrunner/received_events","type":"User","site_admin":false},"html_url":"https://github.com/gunnarrunner/little-esty-shop","description":null,"fork":true,"url":"https://api.github.com/repos/gunnarrunner/little-esty-shop","forks_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/forks","keys_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/keys{/key_id}","collaborators_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/teams","hooks_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/hooks","issue_events_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/issues/events{/number}","events_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/events","assignees_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/assignees{/user}","branches_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/branches{/branch}","tags_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/tags","blobs_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/git/refs{/sha}","trees_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/git/trees{/sha}","statuses_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/statuses/{sha}","languages_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/languages","stargazers_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/stargazers","contributors_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/contributors","subscribers_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/subscribers","subscription_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/subscription","commits_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/commits{/sha}","git_commits_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/git/commits{/sha}","comments_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/comments{/number}","issue_comment_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/issues/comments{/number}","contents_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/contents/{+path}","compare_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/compare/{base}...{head}","merges_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/merges","archive_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/downloads","issues_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/issues{/number}","pulls_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/pulls{/number}","milestones_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/milestones{/number}","notifications_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/labels{/name}","releases_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/releases{/id}","deployments_url":"https://api.github.com/repos/gunnarrunner/little-esty-shop/deployments","created_at":"2021-07-26T20:08:41Z","updated_at":"2021-08-05T15:55:01Z","pushed_at":"2021-08-05T15:54:59Z","git_url":"git://github.com/gunnarrunner/little-esty-shop.git","ssh_url":"git@github.com:gunnarrunner/little-esty-shop.git","clone_url":"https://github.com/gunnarrunner/little-esty-shop.git","svn_url":"https://github.com/gunnarrunner/little-esty-shop","homepage":null,"size":1267,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":3,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":22,"license":null,"forks":3,"open_issues":22,"watchers":0,"default_branch":"main"},"source":{"id":313663245,"node_id":"MDEwOlJlcG9zaXRvcnkzMTM2NjMyNDU=","name":"little-esty-shop","full_name":"turingschool-examples/little-esty-shop","private":false,"owner":{"login":"turingschool-examples","id":8518346,"node_id":"MDEyOk9yZ2FuaXphdGlvbjg1MTgzNDY=","avatar_url":"https://avatars.githubusercontent.com/u/8518346?v=4","gravatar_id":"","url":"https://api.github.com/users/turingschool-examples","html_url":"https://github.com/turingschool-examples","followers_url":"https://api.github.com/users/turingschool-examples/followers","following_url":"https://api.github.com/users/turingschool-examples/following{/other_user}","gists_url":"https://api.github.com/users/turingschool-examples/gists{/gist_id}","starred_url":"https://api.github.com/users/turingschool-examples/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/turingschool-examples/subscriptions","organizations_url":"https://api.github.com/users/turingschool-examples/orgs","repos_url":"https://api.github.com/users/turingschool-examples/repos","events_url":"https://api.github.com/users/turingschool-examples/events{/privacy}","received_events_url":"https://api.github.com/users/turingschool-examples/received_events","type":"Organization","site_admin":false},"html_url":"https://github.com/turingschool-examples/little-esty-shop","description":null,"fork":false,"url":"https://api.github.com/repos/turingschool-examples/little-esty-shop","forks_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/forks","keys_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/keys{/key_id}","collaborators_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/teams","hooks_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/hooks","issue_events_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/issues/events{/number}","events_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/events","assignees_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/assignees{/user}","branches_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/branches{/branch}","tags_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/tags","blobs_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/git/refs{/sha}","trees_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/git/trees{/sha}","statuses_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/statuses/{sha}","languages_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/languages","stargazers_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/stargazers","contributors_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/contributors","subscribers_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/subscribers","subscription_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/subscription","commits_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/commits{/sha}","git_commits_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/git/commits{/sha}","comments_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/comments{/number}","issue_comment_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/issues/comments{/number}","contents_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/contents/{+path}","compare_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/compare/{base}...{head}","merges_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/merges","archive_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/downloads","issues_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/issues{/number}","pulls_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/pulls{/number}","milestones_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/milestones{/number}","notifications_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/labels{/name}","releases_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/releases{/id}","deployments_url":"https://api.github.com/repos/turingschool-examples/little-esty-shop/deployments","created_at":"2020-11-17T15:33:36Z","updated_at":"2021-07-30T16:07:23Z","pushed_at":"2021-08-04T23:21:38Z","git_url":"git://github.com/turingschool-examples/little-esty-shop.git","ssh_url":"git@github.com:turingschool-examples/little-esty-shop.git","clone_url":"https://github.com/turingschool-examples/little-esty-shop.git","svn_url":"https://github.com/turingschool-examples/little-esty-shop","homepage":null,"size":1073,"stargazers_count":0,"watchers_count":0,"language":"Ruby","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":112,"mirror_url":null,"archived":false,"disabled":false,"open_issues_count":49,"license":null,"forks":112,"open_issues":49,"watchers":0,"default_branch":"main"},"network_count":112,"subscribers_count":0}'
+  recorded_at: Sat, 07 Aug 2021 03:10:52 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/leehopper/little-esty-shop/pulls?state=closed
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 07 Aug 2021 03:10:50 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2'
+      Cache-Control:
+      - public, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - '"992aaf92b487506974e4305db4a64326866f3ed48b2ba424cef8fbe4e28f72b0"'
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation,
+        Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '7'
+      X-Ratelimit-Reset:
+      - '1628309013'
+      X-Ratelimit-Resource:
+      - core
+      X-Ratelimit-Used:
+      - '53'
+      Accept-Ranges:
+      - bytes
+      X-Github-Request-Id:
+      - E540:6920:15EFABA:2A24CF4:610DF9BD
+    body:
+      encoding: UTF-8
+      string: "[]"
+  recorded_at: Sat, 07 Aug 2021 03:10:53 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/leehopper/little-esty-shop/contributors
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 07 Aug 2021 03:10:50 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - public, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - W/"94bf5c66b57e640e5fbaebe5d82e80c02ba3c0139d1d8331ea24e164573ae2e8"
+      Last-Modified:
+      - Thu, 05 Aug 2021 20:06:45 GMT
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes,
+        X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation,
+        Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - '0'
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Ratelimit-Limit:
+      - '60'
+      X-Ratelimit-Remaining:
+      - '6'
+      X-Ratelimit-Reset:
+      - '1628309013'
+      X-Ratelimit-Resource:
+      - core
+      X-Ratelimit-Used:
+      - '54'
+      Accept-Ranges:
+      - bytes
+      Content-Length:
+      - '939'
+      X-Github-Request-Id:
+      - E541:1FF5:542F1C:DF7E33:610DF9BD
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"login":"Jacobmar13","id":80134340,"node_id":"MDQ6VXNlcjgwMTM0MzQw","avatar_url":"https://avatars.githubusercontent.com/u/80134340?v=4","gravatar_id":"","url":"https://api.github.com/users/Jacobmar13","html_url":"https://github.com/Jacobmar13","followers_url":"https://api.github.com/users/Jacobmar13/followers","following_url":"https://api.github.com/users/Jacobmar13/following{/other_user}","gists_url":"https://api.github.com/users/Jacobmar13/gists{/gist_id}","starred_url":"https://api.github.com/users/Jacobmar13/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/Jacobmar13/subscriptions","organizations_url":"https://api.github.com/users/Jacobmar13/orgs","repos_url":"https://api.github.com/users/Jacobmar13/repos","events_url":"https://api.github.com/users/Jacobmar13/events{/privacy}","received_events_url":"https://api.github.com/users/Jacobmar13/received_events","type":"User","site_admin":false,"contributions":88},{"login":"antoniojking","id":81713591,"node_id":"MDQ6VXNlcjgxNzEzNTkx","avatar_url":"https://avatars.githubusercontent.com/u/81713591?v=4","gravatar_id":"","url":"https://api.github.com/users/antoniojking","html_url":"https://github.com/antoniojking","followers_url":"https://api.github.com/users/antoniojking/followers","following_url":"https://api.github.com/users/antoniojking/following{/other_user}","gists_url":"https://api.github.com/users/antoniojking/gists{/gist_id}","starred_url":"https://api.github.com/users/antoniojking/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/antoniojking/subscriptions","organizations_url":"https://api.github.com/users/antoniojking/orgs","repos_url":"https://api.github.com/users/antoniojking/repos","events_url":"https://api.github.com/users/antoniojking/events{/privacy}","received_events_url":"https://api.github.com/users/antoniojking/received_events","type":"User","site_admin":false,"contributions":51},{"login":"BrianZanti","id":8962411,"node_id":"MDQ6VXNlcjg5NjI0MTE=","avatar_url":"https://avatars.githubusercontent.com/u/8962411?v=4","gravatar_id":"","url":"https://api.github.com/users/BrianZanti","html_url":"https://github.com/BrianZanti","followers_url":"https://api.github.com/users/BrianZanti/followers","following_url":"https://api.github.com/users/BrianZanti/following{/other_user}","gists_url":"https://api.github.com/users/BrianZanti/gists{/gist_id}","starred_url":"https://api.github.com/users/BrianZanti/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/BrianZanti/subscriptions","organizations_url":"https://api.github.com/users/BrianZanti/orgs","repos_url":"https://api.github.com/users/BrianZanti/repos","events_url":"https://api.github.com/users/BrianZanti/events{/privacy}","received_events_url":"https://api.github.com/users/BrianZanti/received_events","type":"User","site_admin":false,"contributions":51},{"login":"leehopper","id":82063000,"node_id":"MDQ6VXNlcjgyMDYzMDAw","avatar_url":"https://avatars.githubusercontent.com/u/82063000?v=4","gravatar_id":"","url":"https://api.github.com/users/leehopper","html_url":"https://github.com/leehopper","followers_url":"https://api.github.com/users/leehopper/followers","following_url":"https://api.github.com/users/leehopper/following{/other_user}","gists_url":"https://api.github.com/users/leehopper/gists{/gist_id}","starred_url":"https://api.github.com/users/leehopper/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/leehopper/subscriptions","organizations_url":"https://api.github.com/users/leehopper/orgs","repos_url":"https://api.github.com/users/leehopper/repos","events_url":"https://api.github.com/users/leehopper/events{/privacy}","received_events_url":"https://api.github.com/users/leehopper/received_events","type":"User","site_admin":false,"contributions":38},{"login":"gunnarrunner","id":76886492,"node_id":"MDQ6VXNlcjc2ODg2NDky","avatar_url":"https://avatars.githubusercontent.com/u/76886492?v=4","gravatar_id":"","url":"https://api.github.com/users/gunnarrunner","html_url":"https://github.com/gunnarrunner","followers_url":"https://api.github.com/users/gunnarrunner/followers","following_url":"https://api.github.com/users/gunnarrunner/following{/other_user}","gists_url":"https://api.github.com/users/gunnarrunner/gists{/gist_id}","starred_url":"https://api.github.com/users/gunnarrunner/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/gunnarrunner/subscriptions","organizations_url":"https://api.github.com/users/gunnarrunner/orgs","repos_url":"https://api.github.com/users/gunnarrunner/repos","events_url":"https://api.github.com/users/gunnarrunner/events{/privacy}","received_events_url":"https://api.github.com/users/gunnarrunner/received_events","type":"User","site_admin":false,"contributions":17},{"login":"timomitchel","id":23040094,"node_id":"MDQ6VXNlcjIzMDQwMDk0","avatar_url":"https://avatars.githubusercontent.com/u/23040094?v=4","gravatar_id":"","url":"https://api.github.com/users/timomitchel","html_url":"https://github.com/timomitchel","followers_url":"https://api.github.com/users/timomitchel/followers","following_url":"https://api.github.com/users/timomitchel/following{/other_user}","gists_url":"https://api.github.com/users/timomitchel/gists{/gist_id}","starred_url":"https://api.github.com/users/timomitchel/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/timomitchel/subscriptions","organizations_url":"https://api.github.com/users/timomitchel/orgs","repos_url":"https://api.github.com/users/timomitchel/repos","events_url":"https://api.github.com/users/timomitchel/events{/privacy}","received_events_url":"https://api.github.com/users/timomitchel/received_events","type":"User","site_admin":false,"contributions":9},{"login":"scottalexandra","id":8812335,"node_id":"MDQ6VXNlcjg4MTIzMzU=","avatar_url":"https://avatars.githubusercontent.com/u/8812335?v=4","gravatar_id":"","url":"https://api.github.com/users/scottalexandra","html_url":"https://github.com/scottalexandra","followers_url":"https://api.github.com/users/scottalexandra/followers","following_url":"https://api.github.com/users/scottalexandra/following{/other_user}","gists_url":"https://api.github.com/users/scottalexandra/gists{/gist_id}","starred_url":"https://api.github.com/users/scottalexandra/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/scottalexandra/subscriptions","organizations_url":"https://api.github.com/users/scottalexandra/orgs","repos_url":"https://api.github.com/users/scottalexandra/repos","events_url":"https://api.github.com/users/scottalexandra/events{/privacy}","received_events_url":"https://api.github.com/users/scottalexandra/received_events","type":"User","site_admin":false,"contributions":3},{"login":"jamisonordway","id":33180544,"node_id":"MDQ6VXNlcjMzMTgwNTQ0","avatar_url":"https://avatars.githubusercontent.com/u/33180544?v=4","gravatar_id":"","url":"https://api.github.com/users/jamisonordway","html_url":"https://github.com/jamisonordway","followers_url":"https://api.github.com/users/jamisonordway/followers","following_url":"https://api.github.com/users/jamisonordway/following{/other_user}","gists_url":"https://api.github.com/users/jamisonordway/gists{/gist_id}","starred_url":"https://api.github.com/users/jamisonordway/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/jamisonordway/subscriptions","organizations_url":"https://api.github.com/users/jamisonordway/orgs","repos_url":"https://api.github.com/users/jamisonordway/repos","events_url":"https://api.github.com/users/jamisonordway/events{/privacy}","received_events_url":"https://api.github.com/users/jamisonordway/received_events","type":"User","site_admin":false,"contributions":1}]'
+  recorded_at: Sat, 07 Aug 2021 03:10:53 GMT
+recorded_with: VCR 6.0.0
