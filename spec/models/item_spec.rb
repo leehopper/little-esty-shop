@@ -19,6 +19,52 @@ RSpec.describe Item, type: :model do
     end
   end
 
+  describe 'class methods' do
+    describe '#enabled_items' do
+      it 'returns merchant items with status enabled' do
+        merchant = create(:merchant)
+        disabled_items = []
+        enabled_items = []
+        3.times do
+          disabled_items << create(:item, merchant: merchant)
+          enabled_items << create(:item, status: 'enabled', merchant: merchant)
+        end
+
+        actual = merchant.items.enabled_items.map do |item|
+          item.name
+        end
+
+        expected = enabled_items.map do |item|
+          item.name
+        end
+
+        expect(actual).to eq(expected)
+      end
+    end
+
+    describe '#enabled_items' do
+      it 'returns merchant items with status enabled' do
+        merchant = create(:merchant)
+        disabled_items = []
+        enabled_items = []
+        3.times do
+          disabled_items << create(:item, merchant: merchant)
+          enabled_items << create(:item, status: 'enabled', merchant: merchant)
+        end
+
+        actual = merchant.items.enabled_items.map do |item|
+          item.name
+        end
+
+        expected = enabled_items.map do |item|
+          item.name
+        end
+
+        expect(actual).to eq(expected)
+      end
+    end
+  end
+
   describe 'instance methods' do
     describe '#best_sales_day' do
       it 'can return date of highest sales earned' do

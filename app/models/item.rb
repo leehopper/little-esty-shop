@@ -10,6 +10,14 @@ class Item < ApplicationRecord
 
   enum status: [ :disabled, :enabled ]
 
+  def self.enabled_items
+    where('status = ?', 1)
+  end
+
+  def self.disabled_items
+    where('status = ?', 1)
+  end
+
   def best_sales_day
     invoices.joins(:transactions)
     .where(transactions: {result: true})
