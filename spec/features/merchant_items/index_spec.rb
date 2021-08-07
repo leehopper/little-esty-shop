@@ -6,24 +6,22 @@ RSpec.describe 'the merchant items index', :vcr do
     3.times do
       create(:item, status: "enabled", merchant: @merchant)
     end
+
+    visit merchant_items_path(@merchant)
   end
 
   describe 'display' do
     it 'shows merchant name' do
-      visit merchant_items_path(@merchant)
-
       within('#header') do
         expect(page).to have_content("#{@merchant.name} Item Index")
       end
     end
 
-    it 'shows enabled items' do
-      visit merchant_items_path(@merchant)
-      binding.pry 
-
+    it 'shows enabled items as links and with a disable button' do
       within('#enabled_items') do
         @merchant.items.enabled_items.each do |item|
           expect(page).to have_link("#{item.name}")
+          expect(page).to have_button("Disable #{item.name}")
         end
 
         @merchant.items.disabled_items.each do |item|
@@ -32,7 +30,20 @@ RSpec.describe 'the merchant items index', :vcr do
       end
     end
 
-    it 'displays merchant name and items' do
+    it 'shows disabled items as links and with an enable button' do
+      within('#disabled_items') do
+        @merchant.items.enabled_items.each do |item|
+          expect(page).to_not have_link("#{item.name}")
+        end
+
+        @merchant.items.disabled_items.each do |item|
+          expect(page).to have_link("#{item.name}")
+          expect(page).to have_button("Enable #{item.name}")
+        end
+      end
+    end
+
+    it 'shows all items for merchant and not items for other merchants' do
       new_item = create(:item)
 
       visit merchant_items_path(@merchant)
@@ -44,42 +55,64 @@ RSpec.describe 'the merchant items index', :vcr do
       expect(page).to_not have_content(new_item.name)
     end
 
-    it 'has item names that are links' do
-      expect(page).to have_link("#{@item1.name}")
-    end
-
-    it 'has an enable button for items that are disabled' do
-      expect(page).to have_button('Enable')
-    end
-
-    it 'has a disable link for items that are enabled' do
-      expect(page).to_not have_button("Disable #{@item1.name}")
-      click_button("Enable #{@item1.name}")
-
-      expect(page).to have_button("Disable #{@item1.name}")
-    end
-
-    it 'has a button to make a new merchant item' do
-      expect(page).to have_button('Create a New Item')
+    it 'shows button to create a new merchant item' do
+      within ('#create_item') do
+        expect(page).to have_button('Create a New Item')
+      end
     end
   end
 
   describe 'interactable elements' do
     it 'can click on item link and be taken to its show page' do
-      first(:link, "#{@item1.name}").click
+      item = @merchant.items.first
 
-      expect(current_path).to eq(merchant_item_path(@merchant, @item1))
-      expect(page).to have_content("#{@item1.name}")
-      expect(page).to have_content("#{@item1.description}")
-      expect(page).to have_content("#{@item1.unit_price}")
+      click_link "#{item.name}"
+
+      expect(current_path).to eq(merchant_item_path(@merchant.id, item.id))
+
+      expect(page).to have_content("#{item.name}")
+      expect(page).to have_content("#{item.description}")
+      expect(page).to have_content("#{item.unit_price}")
     end
 
-    it 'can click on enable button and enable disabled item' do
-      click_button("Enable #{@item1.name}")
+    it 'can click on enable button and enable a disabled item' do
+      item = @merchant.items.disabled_items.first
+
+      within('#enabled_items') do
+        expect(page).to_not have_content(item.name)
+      end
+
+      click_button("Enable #{item.name}")
 
       expect(current_path).to eq(merchant_items_path(@merchant))
-      expect('Enabled Items').to appear_before("#{@item1.name}")
-      expect("#{@item1.name}").to appear_before('Disabled Items')
+
+      within('#enabled_items') do
+        expect(page).to have_content(item.name)
+      end
+
+      within('#disabled_items') do
+        expect(page).to_not have_content(item.name)
+      end
+    end
+
+    it 'can click on disable button and disable an enabled item' do
+      item = @merchant.items.enabled_items.first
+
+      within('#disabled_items') do
+        expect(page).to_not have_content(item.name)
+      end
+
+      click_button("Disable #{item.name}")
+
+      expect(current_path).to eq(merchant_items_path(@merchant))
+
+      within('#disabled_items') do
+        expect(page).to have_content(item.name)
+      end
+
+      within('#enabled_items') do
+        expect(page).to_not have_content(item.name)
+      end
     end
 
     it "can click on 'Create a New Item' button and be taken to the new page " do
