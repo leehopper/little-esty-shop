@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.describe 'it shows the attributes of a certain merchant' do
+RSpec.describe 'it shows the attributes of a certain merchant', :vcr do
   before :each do
     visit "/admin/merchants/#{@merchant1.id}"
   end

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'it can display the dashboards index page' do
+RSpec.describe 'it can display the dashboards index page', :vcr do
   before :each do
     visit "/admin"
   end
@@ -100,7 +100,7 @@ RSpec.describe 'it can display the dashboards index page' do
   # And I see that the list is ordered from oldest to newest
   it 'shows list of incomplete invoices by id is ascending order' do
     visit "/admin"
-    
+
     expect(page).to have_content("Incomplete Invoices")
 
     within("#Incomplete_Invoices") do

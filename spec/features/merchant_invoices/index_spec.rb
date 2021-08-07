@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'the merchant invoices index' do
+RSpec.describe 'the merchant invoices index', :vcr do
 
   describe 'display' do
     it 'shows header text' do

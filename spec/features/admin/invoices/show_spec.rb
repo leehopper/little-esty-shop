@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Admin Invoice Show Page' do
+RSpec.describe 'Admin Invoice Show Page', :vcr do
   # As an admin,
   # When I visit an admin invoice show page
   # Then I see information related to that invoice including:

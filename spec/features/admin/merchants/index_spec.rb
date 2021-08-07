@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.describe 'it shows the merchant index page' do
+RSpec.describe 'it shows the merchant index page', :vcr do
   before :each do
     visit "/admin/merchants"
   end

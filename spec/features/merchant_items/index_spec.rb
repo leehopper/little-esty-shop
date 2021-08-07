@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'the merchant items index' do
+RSpec.describe 'the merchant items index', :vcr do
   describe 'display' do
     it 'visit' do
       visit merchant_items_path(@merchant1)

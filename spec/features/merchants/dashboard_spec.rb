@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'the merchant dashboard' do
+RSpec.describe 'the merchant dashboard', :vcr do
   describe 'display' do
     it 'shows the name of the merchant and links to items and invoices index' do
       visit merchant_path(@merchant1.id)

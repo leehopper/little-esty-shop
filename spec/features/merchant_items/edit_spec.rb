@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'the merchant item edit' do
+RSpec.describe 'the merchant item edit', :vcr do
   describe 'display' do
     it 'visit' do
       visit edit_merchant_item_path(@merchant1, @item1)

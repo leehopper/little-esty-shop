@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.describe 'Update an existing merchant by clicking a link on its show page' do
+RSpec.describe 'Update an existing merchant by clicking a link on its show page', :vcr do
   before :each do
     visit "/admin/merchants/#{@merchant1.id}"
   end

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Admin Invoices Index Page' do
+RSpec.describe 'Admin Invoices Index Page', :vcr do
   # As an admin,
   # When I visit the admin Invoices index ("/admin/invoices")
   # Then I see a list of all Invoice ids in the system

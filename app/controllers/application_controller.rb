@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
 end
 
+def welcome
+end 
+
 private
 
 def error_message(errors)

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'the merchant invoice show' do
+RSpec.describe 'the merchant invoice show', :vcr do
 
   describe 'display' do
     it 'shows header text merchant name and invoice id' do
