@@ -8,9 +8,10 @@ RSpec.describe 'the merchant dashboard', :vcr do
       visit merchant_path(merchant1.id)
 
       within('#header') do
-        expect(page).to have_content(merchant1.name)
+        expect(page).to have_content("#{merchant1.name} Dashboard")
         expect(page).to have_selector(:link_or_button, "My Invoices")
         expect(page).to have_selector(:link_or_button, "My Items")
+        expect(page).to have_selector(:link_or_button, "My Bulk Discounts")
       end
     end
 
@@ -42,7 +43,7 @@ RSpec.describe 'the merchant dashboard', :vcr do
   end
 
   describe 'hyperlinks' do
-    it 'links to merchant invoice and items index' do
+    it 'links to merchant invoice, items, and bulk discount indexes' do
       merchant1 = create(:merchant)
 
       visit merchant_path(merchant1.id)
@@ -59,6 +60,14 @@ RSpec.describe 'the merchant dashboard', :vcr do
         click_link 'My Items'
 
         expect(current_path).to eq(merchant_items_path(merchant1.id))
+      end
+
+      visit merchant_path(merchant1.id)
+
+      within('#header') do
+        click_link 'My Bulk Discounts'
+
+        expect(current_path).to eq(merchant_bulk_discounts_path(merchant1.id))
       end
     end
   end
