@@ -2,47 +2,53 @@ require 'rails_helper'
 RSpec.describe 'merchant edit', :vcr do
   context 'Update an existing merchant by clicking a link on its show page' do
     before :each do
-      visit "/admin/merchants/#{@merchant1.id}"
+      @merchant = create(:merchant)
+      visit admin_merchant_path(@merchant.id)
     end
 
     it 'can click on the link in the show page and be taken to the update form' do
-      click_link("update #{@merchant1.name}")
+      click_link("update #{@merchant.name}")
 
-      expect(current_path).to eq("/admin/merchants/#{@merchant1.id}/edit")
+      expect(current_path).to eq(edit_admin_merchant_path(@merchant.id))
     end
 
     it 'can fill out a form to update a form for a specific merchant' do
-      expect(page).to have_content("#{@merchant1.name}")
-      expect(page).to_not have_content("Kostco")
-      click_link("update #{@merchant1.name}")
+      name = @merchant.name
 
-      fill_in("Name", with: "Kostco")
+      expect(page).to have_content("#{@merchant.name}")
+      expect(page).to_not have_content("Costco")
 
-      click_button("Update #{@merchant1.name}")
+      click_link("update #{@merchant.name}")
 
-      expect(current_path).to eq("/admin/merchants/#{@merchant1.id}")
-      expect(page).to have_content("Kostco")
-      expect(page).to_not have_content("#{@merchant1.name}")
+      fill_in("Name", with: "Costco")
+
+      click_button("Update #{@merchant.name}")
+
+      expect(current_path).to eq(admin_merchant_path(@merchant.id))
+      expect(page).to have_content("Costco")
+      expect(page).to_not have_content(@merchant.name)
     end
 
     it 'gives a flash message when you successfully update a merchant' do
       expect(page).to_not have_content("Merchant Successfully updated!")
-      click_link("update #{@merchant1.name}")
 
-      fill_in("Name", with: "Kostco")
+      click_link("update #{@merchant.name}")
 
-      click_button("Update #{@merchant1.name}")
+      fill_in("Name", with: "Costco")
+
+      click_button("Update #{@merchant.name}")
 
       expect(page).to have_content("Merchant Successfully updated!")
     end
 
     it 'gives a flash message when you do not successfully update a merchant' do
       expect(page).to_not have_content("Error: Name can't be blank")
-      click_link("update #{@merchant1.name}")
+
+      click_link("update #{@merchant.name}")
 
       fill_in("Name", with: "")
 
-      click_button("Update #{@merchant1.name}")
+      click_button("Update #{@merchant.name}")
 
       expect(page).to have_content("Error: Name can't be blank")
     end
