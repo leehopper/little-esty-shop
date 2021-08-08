@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'the merchant item creation', :vcr do
+RSpec.describe 'the merchant item new', :vcr do
   before(:each) do
     @merchant1 = create(:merchant)
   end
