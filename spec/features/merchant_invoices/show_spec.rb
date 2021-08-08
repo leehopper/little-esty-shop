@@ -4,7 +4,7 @@ RSpec.describe 'the merchant invoice show', :vcr do
   before(:each) do
     @merchant1 = create(:merchant, :with_items)
     @invoice1 = create(:invoice)
-    @invoice_item1 = create(:invoice_item, item: @merchant1.items.first, invoice: @invoice1)
+    @invoice_item1 = create(:invoice_item, item: @merchant1.items.first, invoice: @invoice1, quantity: 10, unit_price: 50)
   end
 
   describe 'display' do
