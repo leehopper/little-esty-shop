@@ -11,77 +11,49 @@ RSpec.describe Merchant, type: :model do
   describe 'validations' do
     it { should validate_presence_of(:name) }
   end
-  
+
   describe 'instance methods' do
     describe '#top_customers' do
       it 'returns the top 5 customers by succussesful transactions' do
-        customer5 = Customer.create!(first_name: 'FName5', last_name: 'LName5')
+        merchant = create(:merchant)
+        item1 = create(:item, merchant: merchant)
+        item2 = create(:item, merchant: merchant)
+        item3 = create(:item, merchant: merchant)
 
-        invoice16 = customer5.invoices.create!(status: 'completed')
+        customer_with_5 = create(:customer)
+        c5_invoice1 = create(:invoice, :with_transactions, transaction_count: 5, customer: customer_with_5)
+        create(:invoice_item, item: item1, invoice: c5_invoice1)
 
-        invoice_item17 = InvoiceItem.create!(invoice_id: invoice16.id, item_id: @item1.id, quantity: 100, unit_price: @item1.unit_price, status: 'packaged')
+        customer_with_4 = create(:customer)
+        c6_invoice1 = create(:invoice, :with_transactions, transaction_count: 4, customer: customer_with_4)
+        create(:invoice_item, item: item2, invoice: c6_invoice1)
 
-        transaction14 = invoice16.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
-        transaction15 = invoice16.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
-        transaction16 = invoice16.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
-        transaction17 = invoice16.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
-        transaction18 = invoice16.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
+        customer_with_3 = create(:customer)
+        c3_invoice1 = create(:invoice, :with_transactions, transaction_count: 3, customer: customer_with_3)
+        create(:invoice_item, item: item2, invoice: c3_invoice1)
+        create(:invoice_item, item: item3, invoice: c3_invoice1)
+        create(:invoice_item, item: item1, invoice: c3_invoice1)
 
+        customer_with_9 = create(:customer)
+        c9_invoice1 = create(:invoice, :with_transactions, transaction_count: 9, customer: customer_with_9)
+        create(:invoice_item, item: item2, invoice: c9_invoice1)
 
-        customer6 = Customer.create!(first_name: 'FName6', last_name: 'LName6')
+        customer_with_2 = create(:customer)
+        c2_invoice1 = create(:invoice, customer: customer_with_2)
+        create(:transaction, result: false, invoice: c2_invoice1)
+        create(:transaction, result: true, invoice: c2_invoice1)
+        create(:transaction, result: true, invoice: c2_invoice1)
+        create(:invoice_item, item: item1, invoice: c2_invoice1)
 
-        invoice17 = customer6.invoices.create!(status: 'in_progress')
+        customer_with_1 = create(:customer)
+        c1_invoice1 = create(:invoice, :with_transactions, transaction_count: 1, customer: customer_with_1)
+        create(:invoice_item, item: item1, invoice: c1_invoice1)
 
-        invoice_item18 = InvoiceItem.create!(invoice_id: invoice17.id, item_id: @item2.id, quantity: 100, unit_price: @item2.unit_price, status: 'packaged')
-
-        transaction19 = invoice17.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
-        transaction20 = invoice17.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
-        transaction21 = invoice17.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
-        transaction22 = invoice17.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
-
-
-        customer7 = Customer.create!(first_name: 'FName7', last_name: 'LName7')
-
-        invoice18 = customer7.invoices.create!(status: 'in_progress')
-
-        invoice_item19 = InvoiceItem.create!(invoice_id: invoice18.id, item_id: @item2.id, quantity: 100, unit_price: @item2.unit_price, status: 'packaged')
-        invoice_item20 = InvoiceItem.create!(invoice_id: invoice18.id, item_id: @item3.id, quantity: 100, unit_price: @item3.unit_price, status: 'packaged')
-        invoice_item21 = InvoiceItem.create!(invoice_id: invoice18.id, item_id: @item1.id, quantity: 100, unit_price: @item1.unit_price, status: 'packaged')
-
-        transaction23 = invoice18.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
-        transaction24 = invoice18.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
-        transaction25 = invoice18.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
-
-
-        customer8 = Customer.create!(first_name: 'FName8', last_name: 'LName8')
-
-        invoice19 = customer8.invoices.create!(status: 'completed')
-
-        invoice_item22 = InvoiceItem.create!(invoice_id: invoice19.id, item_id: @item2.id, quantity: 100, unit_price: @item2.unit_price, status: 'packaged')
-
-        transaction26 = invoice19.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
-        transaction27 = invoice19.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
-        transaction28 = invoice19.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
-        transaction29 = invoice19.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
-        transaction30 = invoice19.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
-        transaction31 = invoice19.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
-        transaction29 = invoice19.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
-        transaction30 = invoice19.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
-        transaction31 = invoice19.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
-
-        customer9 = Customer.create!(first_name: 'FName9', last_name: 'LName9')
-
-        invoice22 = customer9.invoices.create!(status: 'completed')
-
-        invoice_item24 = InvoiceItem.create!(invoice_id: invoice22.id, item_id: @item3.id, quantity: 100, unit_price: @item3.unit_price, status: 'packaged')
-
-        transaction32 = invoice22.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: false)
-
-        actual = @merchant1.top_customers.map do |invoice|
-          invoice.first_name
+        actual = merchant.top_customers.map do |customer|
+          customer.first_name
         end
 
-        expected = [customer8, customer5, customer6, customer7, @customer1].map do |customer|
+        expected = [customer_with_9, customer_with_5, customer_with_4, customer_with_3, customer_with_2].map do |customer|
           customer.first_name
         end
 
@@ -89,7 +61,7 @@ RSpec.describe Merchant, type: :model do
       end
     end
   end
-  
+
   describe 'class methods' do
    describe '.enabled_merchants' do
       it 'can get all the merchants that are enabled' do
@@ -99,13 +71,49 @@ RSpec.describe Merchant, type: :model do
 
     describe '.disabled_merchants' do
       it 'can get all the merchants that are disabled' do
-        expect(Merchant.disabled_merchants).to eq([@merchant1, @merchant2, @merchant3, @merchant4, @merchant7])
+        e_merchant_1 = create(:merchant)
+        e_merchant_2 = create(:merchant)
+        e_merchant_3 = create(:merchant)
+        d_merchant_1 = create(:merchant, status: 'disabled')
+
+        expect(Merchant.disabled_merchants).to eq([e_merchant_1, e_merchant_2, e_merchant_3])
+        expect(Merchant.disabled_merchants).to_not include(d_merchant_1)
       end
     end
 
     describe '.top_5_merchants_revenue' do
       it 'can get the top 5 merchants by their revenue based off of successful transactions' do
-        expect(Merchant.top_5_merchants_revenue).to eq([@merchant2, @merchant1, @merchant3])
+        merchant_5 = create(:merchant, :with_items, item_count: 1)
+        m5_invoice_item = create(:invoice_item, item: merchant_5.items.first, quantity: 1, unit_price: 10)
+        create(:transaction, invoice: m5_invoice_item.invoice)
+
+        merchant_1 = create(:merchant, :with_items, item_count: 1)
+        m1_invoice_item = create(:invoice_item, item: merchant_1.items.first, quantity: 10, unit_price: 10)
+        create(:transaction, invoice: m1_invoice_item.invoice)
+
+        merchant_3 = create(:merchant, :with_items, item_count: 3)
+        m3_invoice_item_1 = create(:invoice_item, item: merchant_3.items.first, quantity: 1, unit_price: 10)
+        m3_invoice_item_2 = create(:invoice_item, item: merchant_3.items.second, quantity: 1, unit_price: 10)
+        m3_invoice_item_3 = create(:invoice_item, item: merchant_3.items.last, quantity: 6, unit_price: 10)
+        create(:transaction, invoice: m3_invoice_item_1.invoice)
+        create(:transaction, invoice: m3_invoice_item_2.invoice)
+        create(:transaction, invoice: m3_invoice_item_3.invoice)
+
+        merchant_2 = create(:merchant, :with_items, item_count: 1)
+        m2_invoice_item = create(:invoice_item, item: merchant_2.items.first, quantity: 9, unit_price: 10)
+        create(:transaction, invoice: m2_invoice_item.invoice)
+
+        merchant_4 = create(:merchant, :with_items, item_count: 1)
+        m4_invoice_item = create(:invoice_item, item: merchant_4.items.first, quantity: 5, unit_price: 10)
+        create(:transaction, invoice: m4_invoice_item.invoice)
+
+        not_expected_merchant = create(:merchant, :with_items, item_count: 1)
+        ne_invoice_item = create(:invoice_item, item: not_expected_merchant.items.first, quantity: 1, unit_price: 5)
+        create(:transaction, invoice: ne_invoice_item.invoice)
+
+        expect(Merchant.top_5_merchants_revenue).to eq([merchant_1, merchant_2, merchant_3, merchant_4, merchant_5])
+
+        expect(Merchant.top_5_merchants_revenue).to_not include(not_expected_merchant)
       end
     end
   end
@@ -113,9 +121,25 @@ RSpec.describe Merchant, type: :model do
   describe 'instance methods' do
     describe '#merchant_best_day' do
       it 'can get the best day for revenue for the top 5 merchants by revenue' do
-        expect(@merchant1.merchant_best_day).to eq(@invoice17.created_at)
+        merchant = create(:merchant, :with_items, item_count: 3)
+
+        best_invoice_1 = create(:invoice, :with_transactions, created_at: '2000-01-01 15:15:15 UTC')
+        create(:invoice_item, item: merchant.items.first, invoice: best_invoice_1, quantity: 20, unit_price: 10)
+        create(:invoice_item, item: merchant.items.second, invoice: best_invoice_1, quantity: 5, unit_price: 10)
+
+        middle_invoice_1 = create(:invoice, :with_transactions, created_at: '2000-02-02 10:20:30 UTC')
+        create(:invoice_item, item: merchant.items.second, invoice: middle_invoice_1, quantity: 30, unit_price: 10)
+
+        worst_invoice = create(:invoice, :with_transactions, created_at: '2000-03-03 10:10:10 UTC')
+        create(:invoice_item, item: merchant.items.first, invoice: worst_invoice, quantity: 10, unit_price: 10)
+
+        best_invoice_2 = create(:invoice, :with_transactions, created_at: '2000-01-01 10:10:10 UTC')
+        create(:invoice_item, item: merchant.items.third, invoice: best_invoice_2, quantity: 10, unit_price: 10)
+
+        expect(merchant.merchant_best_day).to eq('2000-02-02 00:00:00.000000000 +0000')
       end
     end
+
     describe '#top_five_items' do
       it 'can return the top five revenue earning items for a merchant' do
         expected = [@item14, @item16, @item1, @item15, @item13]
