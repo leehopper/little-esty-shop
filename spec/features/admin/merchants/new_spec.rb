@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'create new merchant', :vcr do
+RSpec.describe 'the admin merchant new', :vcr do
   before :each do
     visit new_admin_merchant_path
   end

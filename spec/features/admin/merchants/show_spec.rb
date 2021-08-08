@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'the admin merchant show page', :vcr do
+RSpec.describe 'the admin merchant show', :vcr do
   before :each do
     @merchant = create(:merchant)
   end
