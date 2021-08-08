@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe 'Admin Invoice Show Page', :vcr do
+RSpec.describe 'the admin invoice show', :vcr do
   before (:each) do
     @invoice = create(:invoice, :with_mixed_status_invoice_items, status: 'completed')
 
     visit admin_invoice_path(@invoice.id)
   end
-  
+
   describe 'display' do
     it 'shows an invoice with attributes' do
       customer = @invoice.customer

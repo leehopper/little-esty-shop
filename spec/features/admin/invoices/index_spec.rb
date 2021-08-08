@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Admin Invoices Index Page', :vcr do
+RSpec.describe 'the admin invoice index', :vcr do
 
   describe 'display' do
     it 'lists all invoice ids in the system' do

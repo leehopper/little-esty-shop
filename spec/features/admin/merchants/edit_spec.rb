@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.describe 'merchant edit', :vcr do
+RSpec.describe 'the admin merchant edit', :vcr do
   context 'Update an existing merchant by clicking a link on its show page' do
     before :each do
       @merchant = create(:merchant)

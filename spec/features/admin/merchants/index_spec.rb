@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'it shows the merchant index page', :vcr do
+RSpec.describe 'the admin merchant index', :vcr do
   before :each do
     5.times do
       create(:merchant)
