@@ -13,6 +13,18 @@ FactoryBot.define do
       end
     end
 
+    trait :with_trans_and_items do
+      transient do
+        transaction_count { 1 }
+        item_count { 1 }
+      end
+
+      after(:create) do |invoice, evaluator|
+        create_list(:transaction, evaluator.transaction_count, invoice: invoice)
+        invoice.items << create_list(:item, evaluator.item_count)
+      end
+    end
+
     trait :with_pending_invoice_items do
       transient do
         invoice_item_count { 3 }

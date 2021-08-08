@@ -65,7 +65,14 @@ RSpec.describe Merchant, type: :model do
   describe 'class methods' do
    describe '.enabled_merchants' do
       it 'can get all the merchants that are enabled' do
-        expect(Merchant.enabled_merchants).to eq([@merchant5, @merchant6])
+        e_merchant_1 = create(:merchant)
+        e_merchant_2 = create(:merchant)
+        e_merchant_3 = create(:merchant)
+        d_merchant_1 = create(:merchant, status: 'disabled')
+
+        expect(Merchant.enabled_merchants).to eq([e_merchant_1, e_merchant_2, e_merchant_3])
+
+        expect(Merchant.enabled_merchants).to_not include(d_merchant_1)
       end
     end
 
@@ -75,9 +82,12 @@ RSpec.describe Merchant, type: :model do
         e_merchant_2 = create(:merchant)
         e_merchant_3 = create(:merchant)
         d_merchant_1 = create(:merchant, status: 'disabled')
+        d_merchant_2 = create(:merchant, status: 'disabled')
+        d_merchant_3 = create(:merchant, status: 'disabled')
 
-        expect(Merchant.disabled_merchants).to eq([e_merchant_1, e_merchant_2, e_merchant_3])
-        expect(Merchant.disabled_merchants).to_not include(d_merchant_1)
+        expect(Merchant.disabled_merchants).to eq([d_merchant_1, d_merchant_2, d_merchant_3])
+
+        expect(Merchant.disabled_merchants).to_not include(e_merchant_1)
       end
     end
 
@@ -123,18 +133,15 @@ RSpec.describe Merchant, type: :model do
       it 'can get the best day for revenue for the top 5 merchants by revenue' do
         merchant = create(:merchant, :with_items, item_count: 3)
 
-        best_invoice_1 = create(:invoice, :with_transactions, created_at: '2000-01-01 15:15:15 UTC')
-        create(:invoice_item, item: merchant.items.first, invoice: best_invoice_1, quantity: 20, unit_price: 10)
-        create(:invoice_item, item: merchant.items.second, invoice: best_invoice_1, quantity: 5, unit_price: 10)
+        best_invoice = create(:invoice, :with_transactions, created_at: '2000-01-01 15:15:15 UTC')
+        create(:invoice_item, item: merchant.items.first, invoice: best_invoice, quantity: 20, unit_price: 10)
+        create(:invoice_item, item: merchant.items.second, invoice: best_invoice, quantity: 5, unit_price: 10)
 
-        middle_invoice_1 = create(:invoice, :with_transactions, created_at: '2000-02-02 10:20:30 UTC')
-        create(:invoice_item, item: merchant.items.second, invoice: middle_invoice_1, quantity: 30, unit_price: 10)
+        middle_invoice = create(:invoice, :with_transactions, created_at: '2000-02-02 10:20:30 UTC')
+        create(:invoice_item, item: merchant.items.second, invoice: middle_invoice, quantity: 30, unit_price: 10)
 
         worst_invoice = create(:invoice, :with_transactions, created_at: '2000-03-03 10:10:10 UTC')
         create(:invoice_item, item: merchant.items.first, invoice: worst_invoice, quantity: 10, unit_price: 10)
-
-        best_invoice_2 = create(:invoice, :with_transactions, created_at: '2000-01-01 10:10:10 UTC')
-        create(:invoice_item, item: merchant.items.third, invoice: best_invoice_2, quantity: 10, unit_price: 10)
 
         expect(merchant.merchant_best_day).to eq('2000-02-02 00:00:00.000000000 +0000')
       end
@@ -142,34 +149,62 @@ RSpec.describe Merchant, type: :model do
 
     describe '#top_five_items' do
       it 'can return the top five revenue earning items for a merchant' do
-        expected = [@item14, @item16, @item1, @item15, @item13]
+        merchant = create(:merchant)
+        invoice_1 = create(:invoice, :with_transactions)
+        invoice_2 = create(:invoice, :with_transactions)
 
-        expect(@merchant1.top_five_items).to eq(expected)
+        bad_transaction = create(:transaction, result: false)
+        invoice_3 = bad_transaction.invoice
+
+        item_3 = create(:item, unit_price: 10, merchant: merchant)
+        create(:invoice_item, item: item_3, invoice: invoice_1, quantity: 5)
+        create(:invoice_item, item: item_3, invoice: invoice_2, quantity: 10)
+        create(:invoice_item, item: item_3, invoice: invoice_3, quantity: 100)
+
+        item_1 = create(:item, unit_price: 10, merchant: merchant)
+        create(:invoice_item, item: item_1, invoice: invoice_1, quantity: 20)
+        create(:invoice_item, item: item_1, invoice: invoice_2, quantity: 5)
+
+        item_2 = create(:item, unit_price: 20, merchant: merchant)
+        create(:invoice_item, item: item_2, invoice: invoice_1, quantity: 10)
+
+        item_5 = create(:item, unit_price: 1, merchant: merchant)
+        create(:invoice_item, item: item_5, invoice: invoice_1, quantity: 50)
+        create(:invoice_item, item: item_5, invoice: invoice_2, quantity: 10)
+
+        item_4 = create(:item, unit_price: 5, merchant: merchant)
+        create(:invoice_item, item: item_4, invoice: invoice_2, quantity: 20)
+
+        worst_item = create(:item, unit_price: 1, merchant: merchant)
+        create(:invoice_item, item: worst_item, invoice: invoice_1, quantity: 5)
+
+        expected = [item_1, item_2, item_3, item_4, item_5]
+
+        expect(merchant.top_five_items).to eq(expected)
+        expect(merchant.top_five_items).to_not include(worst_item)
       end
     end
-    describe '#ready_to_ship' do
-      it 'can give all items that are ready to ship ordered by oldest first' do
-        @merchant1 = Merchant.create!(name: 'Costco', status: "disabled")
-        @customer1 = Customer.create!(first_name: 'Gunner', last_name: 'Runkle')
-        @item1 = @merchant1.items.create!(name: 'Milk', description: 'A large quantity of whole milk', unit_price: 500)
-        @invoice1 = @customer1.invoices.create!(status: 'completed', created_at: '2018-02-13 14:53:59 UTC', updated_at: '2018-02-13 14:53:59 UTC')
-        @invoice2 = @customer1.invoices.create!(status: 'completed', created_at: '2015-05-25 14:53:59 UTC', updated_at: '2015-05-25 14:53:59 UTC')
-        @invoice3 = @customer1.invoices.create!(status: 'completed', created_at: '2010-01-24 14:53:59 UTC', updated_at: '2010-01-24 14:53:59 UTC')
-        @invoice4 = @customer1.invoices.create!(status: 'completed', created_at: '2015-05-25 14:53:59 UTC', updated_at: '2015-05-25 14:53:59 UTC')
-        @invoice_item1 = InvoiceItem.create!(invoice_id: @invoice1.id, item_id: @item1.id, quantity: 125, unit_price: @item1.unit_price, status: 'packaged')
-        @invoice_item2 = InvoiceItem.create!(invoice_id: @invoice2.id, item_id: @item1.id, quantity: 250, unit_price: @item1.unit_price, status: 'pending')
-        @invoice_item3 = InvoiceItem.create!(invoice_id: @invoice3.id, item_id: @item1.id, quantity: 1000, unit_price: @item1.unit_price, status: 'packaged')
-        @invoice_item4 = InvoiceItem.create!(invoice_id: @invoice4.id, item_id: @item1.id, quantity: 500, unit_price: @item1.unit_price, status: 'shipped')
-        @transaction1 = @invoice1.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
-        @transaction2 = @invoice2.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
-        @transaction3 = @invoice3.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: false)
-        @transaction4 = @invoice4.transactions.create!(credit_card_number: '1234234534564567', credit_card_expiration_date: nil, result: true)
 
-        actual = @merchant1.ready_to_ship.map do |item|
-          item.invoice_date
+    describe '#ready_to_ship' do
+      it 'can give all invoices that are ready to ship ordered by oldest first' do
+        merchant = create(:merchant, :with_items, item_count: 4)
+        customer = create(:customer)
+
+        invoice_1 = create(:invoice, customer: customer, created_at: '2018-02-13 14:53:59 UTC')
+        invoice_2 = create(:invoice, customer: customer, created_at: '2015-05-25 14:53:59 UTC')
+        invoice_3 = create(:invoice, customer: customer, created_at: '2010-01-24 14:53:59 UTC')
+        invoice_4 = create(:invoice, customer: customer, created_at: '2015-05-25 14:53:59 UTC')
+
+        create(:invoice_item, invoice: invoice_1, item: merchant.items.first, status: 'packaged')
+        create(:invoice_item, invoice: invoice_2, item: merchant.items.second, status: 'pending')
+        create(:invoice_item, invoice: invoice_3, item: merchant.items.third, status: 'packaged')
+        create(:invoice_item, invoice: invoice_4, item: merchant.items.fourth, status: 'shipped')
+
+        actual = merchant.ready_to_ship.map do |invoice_item|
+          invoice_item.invoice.created_at
         end
 
-        expected = [@invoice3, @invoice2, @invoice1].map do |invoice|
+        expected = [invoice_3, invoice_2, invoice_1].map do |invoice|
           invoice.created_at
         end
 
