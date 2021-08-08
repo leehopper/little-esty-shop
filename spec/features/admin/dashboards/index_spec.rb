@@ -100,22 +100,24 @@ RSpec.describe 'the admin dashboard', :vcr do
       expect(page).to have_content("Incomplete Invoices")
 
       within("#Incomplete_Invoices") do
-        expect(page).to have_content("#{first_invoice.id}")
-        expect(page).to have_content("#{second_invoice.id}")
-        expect(page).to have_content("#{third_invoice.id}")
-        expect(page).to have_content("#{fourth_invoice.id}")
-
-        expect(page).to have_content("#{first_invoice.created_at.strftime("%A, %B %d, %Y")}")
-        expect(page).to have_content("#{second_invoice.created_at.strftime("%A, %B %d, %Y")}")
-        expect(page).to have_content("#{third_invoice.created_at.strftime("%A, %B %d, %Y")}")
-        expect(page).to have_content("#{fourth_invoice.created_at.strftime("%A, %B %d, %Y")}")
+        Invoice.incomplete_invoices_by_date.each do |invoice|
+          within("#invoice-#{invoice.id}") do
+            expect(page).to have_content("#{invoice.id}")
+            expect(page).to have_content("#{invoice.created_at.strftime("%A, %B %d, %Y")}")
+          end
+        end
 
         expect(page).to_not have_content("#{shipped_only_invoice.id}")
         expect(page).to_not have_content("#{shipped_only_invoice.id}")
 
-        expect("#{first_invoice.id}").to appear_before("#{second_invoice.id}")
-        expect("#{second_invoice.id}").to appear_before("#{third_invoice.id}")
-        expect("#{third_invoice.id}").to appear_before("#{fourth_invoice.id}")
+        first = find("#invoice-#{first_invoice.id}")
+        second = find("#invoice-#{second_invoice.id}")
+        third = find("#invoice-#{third_invoice.id}")
+        last = find("#invoice-#{fourth_invoice.id}")
+
+        expect(first).to appear_before(second)
+        expect(second).to appear_before(third)
+        expect(third).to appear_before(last)
       end
     end
 
