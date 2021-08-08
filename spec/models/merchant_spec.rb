@@ -130,7 +130,7 @@ RSpec.describe Merchant, type: :model do
 
   describe 'instance methods' do
     describe '#merchant_best_day' do
-      it 'can get the best day for revenue for the top 5 merchants by revenue' do
+      it 'returns the merchants best date of revenue using invoice created at dates' do
         merchant = create(:merchant, :with_items, item_count: 3)
 
         best_invoice = create(:invoice, :with_transactions, created_at: '2000-01-01 15:15:15 UTC')

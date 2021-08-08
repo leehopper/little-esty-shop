@@ -53,32 +53,44 @@ RSpec.describe 'it shows the merchant index page', :vcr do
       end
     end
 
-    it 'displays the top 5 merchants by revenue on the show page' do
-      within "#top-5-merchants-#{@merchant2.id}" do
-        expect(page).to have_content(@merchant2.name)
-        expect(page).to have_content("$2,740,000.00")
+    it 'shows the top 5 merchants by revenue and their best day of sales' do
+      merchant_5 = create(:merchant, :with_items, item_count: 1)
+      m5_invoice_item = create(:invoice_item, item: merchant_5.items.first, quantity: 1, unit_price: 100)
+      create(:transaction, invoice: m5_invoice_item.invoice)
+
+      merchant_1 = create(:merchant, :with_items, item_count: 1)
+      m1_invoice_item = create(:invoice_item, item: merchant_1.items.first, quantity: 10, unit_price: 100)
+      create(:transaction, invoice: m1_invoice_item.invoice)
+
+      merchant_3 = create(:merchant, :with_items, item_count: 3)
+      m3_invoice_item_1 = create(:invoice_item, item: merchant_3.items.first, quantity: 1, unit_price: 100)
+      m3_invoice_item_2 = create(:invoice_item, item: merchant_3.items.second, quantity: 1, unit_price: 100)
+      m3_invoice_item_3 = create(:invoice_item, item: merchant_3.items.last, quantity: 6, unit_price: 100)
+      create(:transaction, invoice: m3_invoice_item_1.invoice)
+      create(:transaction, invoice: m3_invoice_item_2.invoice)
+      create(:transaction, invoice: m3_invoice_item_3.invoice)
+
+      merchant_2 = create(:merchant, :with_items, item_count: 1)
+      m2_invoice_item = create(:invoice_item, item: merchant_2.items.first, quantity: 9, unit_price: 100)
+      create(:transaction, invoice: m2_invoice_item.invoice)
+
+      merchant_4 = create(:merchant, :with_items, item_count: 1)
+      m4_invoice_item = create(:invoice_item, item: merchant_4.items.first, quantity: 5, unit_price: 100)
+      create(:transaction, invoice: m4_invoice_item.invoice)
+
+      not_expected_merchant = create(:merchant, :with_items, item_count: 1)
+      ne_invoice_item = create(:invoice_item, item: not_expected_merchant.items.first, quantity: 1, unit_price: 50)
+      create(:transaction, invoice: ne_invoice_item.invoice)
+
+      visit admin_merchants_path
+
+      Merchant.top_5_merchants_revenue.each do |merchant|
+        within "#top-5-merchants-#{merchant.id}" do
+          expect(page).to have_content(merchant.name)
+          expect(page).to have_content("$#{(merchant.revenue / 100)}.00")
+          expect(page).to have_content("Top selling date for #{merchant.name} was #{merchant.merchant_best_day.strftime("%A, %B %d, %Y")}")
+        end
       end
-
-      within "#top-5-merchants-#{@merchant1.id}" do
-        expect(page).to have_content(@merchant1.name)
-        expect(page).to have_content("$803,750.00")
-      end
-
-      within "#top-5-merchants-#{@merchant3.id}" do
-        expect(page).to have_content(@merchant3.name)
-        expect(page).to have_content("$29,900.00")
-      end
-
-      expect(@merchant2.name).to appear_before(@merchant1.name)
-      expect(@merchant1.name).to appear_before(@merchant3.name)
-    end
-
-    it 'can label the date for the merchants best day for revenue' do
-
-      within "#top-5-merchants-#{@merchant1.id}" do
-        expect(page).to have_content("Top selling date for #{@merchant1.name} was #{@invoice17.created_at.strftime("%A, %B %d, %Y")}")
-      end
-
     end
   end
 
