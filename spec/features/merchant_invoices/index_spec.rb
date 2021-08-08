@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'the merchant invoices index', :vcr do
-  before(:all) do
+  before(:each) do
     @merchant1 = create(:merchant, :with_items)
     @invoice1 = create(:invoice)
     @invoice2 = create(:invoice)
