@@ -1,6 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe 'the merchant invoices index', :vcr do
+  before(:all) do
+    @merchant1 = create(:merchant, :with_items)
+    @invoice1 = create(:invoice)
+    @invoice2 = create(:invoice)
+    @invoice3 = create(:invoice)
+    @invoice4 = create(:invoice)
+    @invoice1.items << @merchant1.items.first
+    @invoice2.items << @merchant1.items.second
+    @invoice3.items << @merchant1.items.third
+    @invoice4.items << @merchant1.items.first
+  end
 
   describe 'display' do
     it 'shows header text' do
@@ -30,27 +41,19 @@ RSpec.describe 'the merchant invoices index', :vcr do
       within("#invoice-#{@invoice4.id}") do
         expect(page).to have_content("Invoice ##{@invoice4.id}")
       end
-
-      within("#invoice-#{@invoice13.id}") do
-        expect(page).to have_content("Invoice ##{@invoice13.id}")
-      end
-
-      within("#invoice-#{@invoice14.id}") do
-        expect(page).to have_content("Invoice ##{@invoice14.id}")
-      end
     end
 
     it 'does not show invoices without one of the merchants items' do
+      merchant2 = create(:merchant, :with_items)
+      invoice5 = create(:invoice)
+      invoice5.items << merchant2.items.first
+      invoice6 = create(:invoice)
+      invoice6.items << merchant2.items.second
+
       visit merchant_invoices_path(@merchant1.id)
 
-      expect(page).to_not have_content(@invoice5.id)
-      expect(page).to_not have_content(@invoice6.id)
-      expect(page).to_not have_content(@invoice7.id)
-      expect(page).to_not have_content(@invoice8.id)
-      expect(page).to_not have_content(@invoice9.id)
-      expect(page).to_not have_content(@invoice10.id)
-      expect(page).to_not have_content(@invoice11.id)
-      expect(page).to_not have_content(@invoice12.id)
+      expect(page).to_not have_content(invoice5.id)
+      expect(page).to_not have_content(invoice6.id)
     end
   end
 
@@ -76,11 +79,20 @@ RSpec.describe 'the merchant invoices index', :vcr do
 
       visit merchant_invoices_path(@merchant1.id)
 
-      within("#invoice-#{@invoice14.id}") do
-        expect(page).to have_link("#{@invoice14.id}")
-        click_link("#{@invoice14.id}")
+      within("#invoice-#{@invoice3.id}") do
+        expect(page).to have_link("#{@invoice3.id}")
+        click_link("#{@invoice3.id}")
 
-        expect(page).to have_current_path(merchant_invoice_path(@merchant1.id, @invoice14.id))
+        expect(page).to have_current_path(merchant_invoice_path(@merchant1.id, @invoice3.id))
+      end
+
+      visit merchant_invoices_path(@merchant1.id)
+
+      within("#invoice-#{@invoice4.id}") do
+        expect(page).to have_link("#{@invoice4.id}")
+        click_link("#{@invoice4.id}")
+
+        expect(page).to have_current_path(merchant_invoice_path(@merchant1.id, @invoice4.id))
       end
     end
   end
