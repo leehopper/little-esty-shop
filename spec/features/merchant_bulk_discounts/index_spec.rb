@@ -7,7 +7,7 @@ RSpec.describe 'the merchant bulk discount index', :vcr do
 
   describe 'display' do
     it 'shows all of the merchants bulk discounts and their attributes' do
-
+      visit merchant_bulk_discounts_path(@merchant.id)
     end
   end
 end
