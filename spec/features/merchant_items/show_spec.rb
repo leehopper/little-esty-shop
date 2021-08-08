@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe 'the merchant items show', :vcr do
+  before(:each) do
+    @merchant1 = create(:merchant, :with_items)
+    @item1 = @merchant1.items.first
+  end
+
   describe 'display' do
     it 'visit' do
       visit merchant_item_path(@merchant1, @item1)
@@ -9,9 +14,9 @@ RSpec.describe 'the merchant items show', :vcr do
     it 'displays item name and its attributes' do
       visit merchant_item_path(@merchant1, @item1)
 
-      expect(page).to have_content('Milk')
-      expect(page).to have_content('A large quantity of whole milk')
-      expect(page).to have_content('500')
+      expect(page).to have_content(@item1.name)
+      expect(page).to have_content(@item1.description)
+      expect(page).to have_content(@item1.unit_price)
     end
   end
 
