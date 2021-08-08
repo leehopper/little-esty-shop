@@ -16,6 +16,8 @@ RSpec.describe 'the merchant bulk discount index', :vcr do
 
     it 'shows all of the merchants bulk discounts and their attributes' do
       within ('#bulk_discounts') do
+        expect(page).to have_content("Merchant Discounts:")
+
         @merchant.bulk_discounts.each do |discount|
           within("#discount-#{discount.id}") do
             expect(page).to have_content("Bulk Discount #{discount.id}")
@@ -38,6 +40,17 @@ RSpec.describe 'the merchant bulk discount index', :vcr do
           end
           visit merchant_bulk_discounts_path(@merchant.id)
         end
+      end
+    end
+  end
+
+  describe 'api calls' do
+    it 'displays the next 3 holidays in the USA and their dates' do
+      within('#holidays') do
+        expect(page).to have_content('Upcoming Holidays in the United States')
+        expect(page).to have_content('Labour Day - Monday, September 6, 2021')
+        expect(page).to have_content('Columbus Day - Monday, October 11, 2021')
+        expect(page).to have_content('Veterans Day - Thursday, November 11, 2021')
       end
     end
   end
