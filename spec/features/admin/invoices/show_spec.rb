@@ -15,15 +15,16 @@ RSpec.describe 'the admin invoice show', :vcr do
 
       visit admin_invoice_path(@invoice.id)
 
-      expect(page).to have_content("#{@invoice.id}")
-      expect(page).to have_content("#{@invoice.status}")
-      expect(page).to have_content("#{@invoice.created_at.strftime('%A, %b %d, %Y')}")
-      expect(page).to have_content("#{customer.first_name}")
-      expect(page).to have_content("#{customer.last_name}")
+      within('#header_attributes') do
+        expect(page).to have_content("Invoice ID: #{@invoice.id}")
+        expect(page).to have_content("#{@invoice.status}")
+        expect(page).to have_content("Created At: #{@invoice.created_at.strftime('%A, %b %d, %Y')}")
+        expect(page).to have_content("Customer: #{customer.first_name} #{customer.last_name}")
 
-      expect(page).to_not have_content("#{other_invoice.id}")
-      expect(page).to_not have_content("#{other_customer.first_name}")
-      expect(page).to_not have_content("#{other_customer.last_name}")
+        expect(page).to_not have_content("#{other_invoice.id}")
+        expect(page).to_not have_content("#{other_customer.first_name}")
+        expect(page).to_not have_content("#{other_customer.last_name}")
+      end
     end
 
     it 'shows all items on the invoice' do
