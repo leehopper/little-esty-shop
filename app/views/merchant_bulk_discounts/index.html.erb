@@ -9,6 +9,10 @@
   <% end %>
 </div>
 
+<div id='buttons'>
+  <%= button_to 'Create a new discount', new_merchant_bulk_discount_path(@merchant.id), method: :get%>
+</div>
+
 <div id='bulk_discounts'>
   <h3>Merchant Discounts:</h3>
   <% @merchant.bulk_discounts.each do |discount| %>
