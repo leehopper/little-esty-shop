@@ -47,19 +47,20 @@ RSpec.describe 'the merchant bulk discounts index', :vcr do
 
     describe 'buttons' do
       it 'links to create a new discount form and adds the discount to merchant' do
-        within('#buttons') do
-          expect(page).to_not have_content('Discount: 99.99%')
+        expect(page).to_not have_content('Discount: 99.99%')
 
+        within('#buttons') do
           click_button 'Create a new discount'
         end
 
         expect(current_path).to eq(new_merchant_bulk_discount_path(@merchant.id))
 
-        fill_in 'discount', with: '0.1'
+        fill_in 'discount', with: '0.9999'
         fill_in 'quant_threshold', with: '10'
         click_button 'Create'
 
         expect(current_path).to eq(merchant_bulk_discounts_path(@merchant.id))
+        expect(page).to have_content('Discount: 99.99%')
       end
     end
   end
