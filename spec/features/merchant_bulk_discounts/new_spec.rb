@@ -81,7 +81,7 @@ RSpec.describe 'the merchant bulk discounts new', :vcr do
         expect(page).to have_content("Error: Quant threshold can't be blank, Quant threshold is not a number")
       end
 
-      it 'input that is not a nummber' do
+      it 'input that is not a number' do
         within('#form') do
           fill_in 'discount', with: 'not a number'
           fill_in 'quant_threshold', with: 'not a number'
