@@ -62,6 +62,22 @@ RSpec.describe 'the merchant bulk discounts index', :vcr do
         expect(current_path).to eq(merchant_bulk_discounts_path(@merchant.id))
         expect(page).to have_content('Discount: 99.99%')
       end
+
+      it 'delete button for each discount deletes the discount' do
+        within ('#bulk_discounts') do
+          @merchant.bulk_discounts.each do |discount|
+            within("#discount-#{discount.id}") do
+              click_button "Delete"
+
+              expect(current_path).to eq(merchant_bulk_discounts_path(@merchant.id))
+            end
+
+            expect(page).to_not have_content("Bulk Discount #{discount.id}")
+          end
+        end
+        
+        expect(@merchant.bulk_discounts.count).to eq(0)
+      end
     end
   end
 
