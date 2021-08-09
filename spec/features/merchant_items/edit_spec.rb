@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'the merchant item edit', :vcr do
+RSpec.describe 'the merchant items edit', :vcr do
   before(:each) do
     @merchant1 = create(:merchant, :with_items)
     @item1 = @merchant1.items.first
