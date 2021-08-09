@@ -1,5 +1,11 @@
 <div id='header'>
   <h1><%= @merchant.name %> Bulk Discounts Index</h1>
+  <br>
+</div>
+
+<div id='buttons'>
+  <%= button_to 'Create a new discount', new_merchant_bulk_discount_path(@merchant.id), method: :get%>
+  <br>
 </div>
 
 <div id='holidays'>
@@ -7,10 +13,7 @@
   <% @holidays.each do |holiday| %>
     <p><%= holiday[:name] %> - <%= holiday[:date].strftime("%A, %B %-d, %Y") %></p>
   <% end %>
-</div>
-
-<div id='buttons'>
-  <%= button_to 'Create a new discount', new_merchant_bulk_discount_path(@merchant.id), method: :get%>
+  <br>
 </div>
 
 <div id='bulk_discounts'>
