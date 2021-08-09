@@ -1,0 +1,13 @@
+<div id='header'>
+  <h1>Create New <%= @merchant.name %> Bulk Discount</h1>
+</div>
+
+<div id='form'>
+  <%= form_with url: merchant_bulk_discounts_path(@merchant.id), method: :post, local: true do |f| %>
+    <%= f.label 'Discount percentage (as decimal)' %>
+    <%= f.text_field :discount %>
+    <%= f.label 'Item quantity threshold'%>
+    <%= f.text_field :quant_threshold %>>
+    <%= f.submit "Create"%>
+    <% end %>
+</div>
