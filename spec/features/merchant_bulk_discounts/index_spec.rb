@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'the merchant bulk discount index', :vcr do
+RSpec.describe 'the merchant bulk discounts index', :vcr do
   before(:each) do
     @merchant = create(:merchant, :with_items_and_discounts)
 
