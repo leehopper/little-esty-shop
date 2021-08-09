@@ -29,20 +29,41 @@ RSpec.describe 'the merchant bulk discounts index', :vcr do
     end
   end
 
-  describe 'hyperlinks' do
-    it 'links to bulk discount show page for each discount' do
-      within ('#bulk_discounts') do
-        @merchant.bulk_discounts.each do |discount|
-          within("#discount-#{discount.id}") do
-            click_link "#{discount.id}"
+  describe 'functionality' do
+    describe 'hyperlinks' do
+      it 'links to bulk discount show page for each discount' do
+        within ('#bulk_discounts') do
+          @merchant.bulk_discounts.each do |discount|
+            within("#discount-#{discount.id}") do
+              click_link "#{discount.id}"
 
-            expect(current_path).to eq(merchant_bulk_discount_path(@merchant.id, discount.id))
+              expect(current_path).to eq(merchant_bulk_discount_path(@merchant.id, discount.id))
+            end
+            visit merchant_bulk_discounts_path(@merchant.id)
           end
-          visit merchant_bulk_discounts_path(@merchant.id)
         end
       end
     end
+
+    describe 'buttons' do
+      it 'links to create a new discount form and adds the discount to merchant' do
+        within('#buttons') do
+          expect(page).to_not have_content('Discount: 99.99%')
+
+          click_button 'Create a new discount'
+        end
+
+        expect(current_path).to eq(new_merchant_bulk_discount_path(@merchant.id))
+
+        fill_in 'discount', with: '0.1'
+        fill_in 'quant_threshold', with: '10'
+        click_button 'Create'
+
+        expect(current_path).to eq(merchant_bulk_discounts_path(@merchant.id))
+      end
+    end
   end
+
 
   describe 'api calls' do
     it 'displays the next 3 holidays in the USA and their dates' do
