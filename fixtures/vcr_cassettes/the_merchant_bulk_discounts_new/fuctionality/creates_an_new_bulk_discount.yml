@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 08 Aug 2021 23:29:51 GMT
+      - Mon, 09 Aug 2021 01:51:58 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -33,17 +33,17 @@ http_interactions:
       Cf-Cache-Status:
       - HIT
       Age:
-      - '7876'
+      - '16403'
       Expect-Ct:
       - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
       Report-To:
-      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=D4YG9TyMgH6EV9Q%2FtcAeMRMnf%2BnlSGk35yfUNMTZ0C517gBTpCS6mGbS5qCWeMLs8P2Kpi1U7nqLkuvkMPM8CfEa7QxvYxZYFcewVohsz%2BpZO2K6vKHd1WcCRMr0dLw6"}],"group":"cf-nel","max_age":604800}'
+      - '{"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report\/v3?s=T79UXTKJJuhz9cbzFEpd%2FTOlWD9LkGs%2BipVf13Y1%2BOc3AUnxIbTM8DZS2m3UuWWUnw3dkGLKlbGcQsoQqRb5nD6M%2FvzDAgZh%2FOcyuwqYy2z14bKT6yixh5frQNIfPbyj"}],"group":"cf-nel","max_age":604800}'
       Nel:
       - '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}'
       Server:
       - cloudflare
       Cf-Ray:
-      - 67bc877b8d0de02b-DFW
+      - 67bd57a3bf052f91-DFW
       Alt-Svc:
       - h3-27=":443"; ma=86400, h3-28=":443"; ma=86400, h3-29=":443"; ma=86400, h3=":443";
         ma=86400
@@ -60,5 +60,5 @@ http_interactions:
         Friday","name":"Good Friday","countryCode":"US","fixed":false,"global":false,"counties":["US-CT","US-DE","US-HI","US-IN","US-KY","US-LA","US-NC","US-ND","US-NJ","US-TN"],"launchYear":null,"types":["Public"]},{"date":"2022-05-30","localName":"Memorial
         Day","name":"Memorial Day","countryCode":"US","fixed":false,"global":true,"counties":null,"launchYear":null,"types":["Public"]},{"date":"2022-06-20","localName":"Juneteenth","name":"Juneteenth","countryCode":"US","fixed":false,"global":true,"counties":null,"launchYear":2021,"types":["Public"]},{"date":"2022-07-04","localName":"Independence
         Day","name":"Independence Day","countryCode":"US","fixed":false,"global":true,"counties":null,"launchYear":null,"types":["Public"]}]'
-  recorded_at: Sun, 08 Aug 2021 23:29:51 GMT
+  recorded_at: Mon, 09 Aug 2021 01:51:57 GMT
 recorded_with: VCR 6.0.0
