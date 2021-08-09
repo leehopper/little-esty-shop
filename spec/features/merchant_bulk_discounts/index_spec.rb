@@ -109,7 +109,6 @@ RSpec.describe 'the merchant bulk discounts index', :vcr do
     end
   end
 
-
   describe 'api calls' do
     it 'displays the next 3 holidays in the USA and their dates' do
       within('#holidays') do
