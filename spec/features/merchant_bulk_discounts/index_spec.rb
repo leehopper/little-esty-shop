@@ -75,8 +75,36 @@ RSpec.describe 'the merchant bulk discounts index', :vcr do
             expect(page).to_not have_content("Bulk Discount #{discount.id}")
           end
         end
-        
+
         expect(@merchant.bulk_discounts.count).to eq(0)
+      end
+
+      it 'edit button for each discount edits the discount and quantity threshold' do
+        @merchant.bulk_discounts.each do |discount|
+          within("#discount-#{discount.id}") do
+            expect(page).to_not have_content('Discount: 99.99%')
+            expect(page).to_not have_content('Quantity Threshold: 999999999')
+
+            click_button "Edit"
+
+            expect(current_path).to eq(edit_merchant_bulk_discount_path(@merchant.id, discount.id))
+          end
+
+          expect(page).to have_content("Edit #{@merchant.name}'s Bulk Discount #{discount.id}")
+
+          within('#form') do
+            fill_in 'bulk_discount_discount', with: '0.9999'
+            fill_in 'bulk_discount_quant_threshold', with: '999999999'
+            click_button 'Update'
+          end
+
+          expect(current_path).to eq(merchant_bulk_discounts_path(@merchant.id))
+
+          within("#discount-#{discount.id}") do
+            expect(page).to have_content('Discount: 99.99%')
+            expect(page).to have_content("Quantity Threshold: 999999999")
+          end
+        end
       end
     end
   end

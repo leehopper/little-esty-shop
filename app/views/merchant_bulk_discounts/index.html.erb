@@ -24,6 +24,7 @@
       <p>Quantity Threshold: <%= discount.quant_threshold %></p>
       <p>Discount: <%= (discount.discount * 100) %>%</p>
       <%= button_to 'Delete', merchant_bulk_discount_path(@merchant.id, discount.id), method: :delete%>
+      <%= button_to 'Edit', edit_merchant_bulk_discount_path(@merchant.id, discount.id), method: :get%>
     </div>
   <% end %>
 </div>
