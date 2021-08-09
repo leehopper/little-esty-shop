@@ -80,7 +80,7 @@ RSpec.describe 'the merchant bulk discounts index', :vcr do
       end
 
       it 'edit button for each discount edits the discount and quantity threshold' do
-        @merchant.bulk_discounts.each do |discount|
+        @merchant.bulk_discounts.first(2).each do |discount|
           within("#discount-#{discount.id}") do
             expect(page).to_not have_content('Discount: 99.99%')
             expect(page).to_not have_content('Quantity Threshold: 999999999')
