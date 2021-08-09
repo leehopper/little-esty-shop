@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'the merchant items index', :vcr do
+RSpec.describe 'the merchant item index', :vcr do
   before(:each) do
     @merchant = create(:merchant, :with_items)
     3.times do
