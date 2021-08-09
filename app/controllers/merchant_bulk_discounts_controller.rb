@@ -28,10 +28,30 @@ class MerchantBulkDiscountsController < ApplicationController
     redirect_to merchant_bulk_discounts_path(params[:merchant_id])
   end
 
+  def edit
+    @merchant = Merchant.find(params[:merchant_id])
+    @discount = BulkDiscount.find(params[:id])
+  end
+
+  def update
+    discount = BulkDiscount.find(params[:id])
+
+    if discount.update(update_bulk_discount_params)
+      redirect_to merchant_bulk_discounts_path(discount.merchant.id)
+    else
+      redirect_to edit_merchant_bulk_discount_path(discount.merchant.id, discount.id)
+      flash[:alert] = "Error: #{error_message(discount.errors)}"
+    end
+  end
+
   private
 
   def bulk_discount_params
     params.permit(:discount, :quant_threshold, :merchant_id)
+  end
+
+  def update_bulk_discount_params
+    params.require(:bulk_discount).permit(:discount, :quant_threshold)
   end
 
   def api_holidays
