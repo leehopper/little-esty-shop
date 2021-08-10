@@ -23,8 +23,14 @@ class Invoice < ApplicationRecord
   def total_discount
     output = 0
     invoice_items.each do |ii|
-      output += ii.discount
+      if ii.bulk_discount != nil
+        output += ii.bulk_discount.discount * ii.quantity * ii.unit_price
+      end
     end
     output
+  end
+
+  def total_discounted_revenue
+    total_revenue - total_discount
   end
 end
