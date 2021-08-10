@@ -17,13 +17,36 @@ RSpec.describe 'the merchant invoice show', :vcr do
       end
     end
 
-    it 'shows status, created on, and total revenue' do
+    it 'shows status and created on' do
       visit merchant_invoice_path(@merchant1.id, @invoice1.id)
 
       within('#invoice_info') do
         expect(page).to have_content("Status: #{@invoice1.status}")
         expect(page).to have_content("Created on: #{@invoice1.created_at.strftime("%A, %B %d, %Y")}")
-        expect(page).to have_content("Total Revenue: $#{(@invoice1.total_revenue / 100)}.00")
+      end
+    end
+
+    it 'shows total revenue and total discounted revenue' do
+      merchant = create(:merchant)
+      invoice = create(:invoice)
+      item_1 = create(:item, merchant: merchant, unit_price: 100)
+      item_2 = create(:item, merchant: merchant, unit_price: 10)
+      item_3 = create(:item, merchant: merchant, unit_price: 3)
+      create(:invoice_item, item: item_1, invoice: invoice, quantity: 5)
+      create(:invoice_item, item: item_2, invoice: invoice, quantity: 25)
+      create(:invoice_item, item: item_3, invoice: invoice, quantity: 50)
+      create(:bulk_discount, merchant: merchant, discount: 0.2, quant_threshold: 20)
+      create(:bulk_discount, merchant: merchant, discount: 0.5, quant_threshold: 50)
+
+      expect(invoice.total_revenue).to eq(900)
+      expect(invoice.total_discount).to eq(125)
+      expect(invoice.total_discounted_revenue).to eq(775)
+
+      visit merchant_invoice_path(merchant.id, invoice.id)
+
+      within('#invoice_info') do
+        expect(page).to have_content("Total Revenue: $#{(invoice.total_revenue / 100)}.00")
+        expect(page).to have_content("Total Discounted Revenue: $#{(invoice.total_discounted_revenue / 100)}")
       end
     end
 
