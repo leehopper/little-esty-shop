@@ -7,10 +7,10 @@ RSpec.describe 'the merchant invoices index', :vcr do
     @invoice2 = create(:invoice)
     @invoice3 = create(:invoice)
     @invoice4 = create(:invoice)
-    @invoice1.items << @merchant1.items.first
-    @invoice2.items << @merchant1.items.second
-    @invoice3.items << @merchant1.items.third
-    @invoice4.items << @merchant1.items.first
+    create(:invoice_item, item: @merchant1.items.first, invoice: @invoice1)
+    create(:invoice_item, item: @merchant1.items.second, invoice: @invoice2)
+    create(:invoice_item, item: @merchant1.items.third, invoice: @invoice3)
+    create(:invoice_item, item: @merchant1.items.first, invoice: @invoice4)
   end
 
   describe 'display' do
