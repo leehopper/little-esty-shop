@@ -22,7 +22,7 @@
       <% invoice_item = InvoiceItem.locate(@invoice.id, item.id) %>
       <p><b>Item Name:</b> <%= item.name %></p>
       <p><b>Quantity:</b> <%= invoice_item.quantity %></p>
-      <p><b>Unit Price:</b> <%= number_to_currency(invoice_item.unit_price / 100) %></p>
+      <p><b>Unit Price:</b> <%= number_to_currency((invoice_item.unit_price / 100)) %></p>
       <% if invoice_item.bulk_discount != nil %>
         <p><b>Bulk Discount:</b> <%= link_to "#{invoice_item.bulk_discount.id}", merchant_bulk_discount_path(@merchant.id, invoice_item.bulk_discount.id) %></p>
       <% end %>
