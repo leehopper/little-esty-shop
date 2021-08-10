@@ -13,17 +13,9 @@ class InvoiceItem < ApplicationRecord
     sum("quantity * unit_price")
   end
 
-  def discount
-    output = 0
-    if bulk_discounts.count >= 1
-      best_discount = bulk_discounts.first.discount
-      bulk_discounts.each do |discount|
-        if quantity >= discount.quant_threshold && discount.discount >= best_discount
-          output = (quantity * unit_price * discount.discount).to_f
-          best_discount = discount.discount
-        end
-      end
-    end
-    output
+  def bulk_discount
+    bulk_discounts.where('quant_threshold <= ?', quantity)
+                  .order(discount: :desc)
+                  .first
   end
 end

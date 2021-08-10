@@ -35,42 +35,42 @@ RSpec.describe InvoiceItem, type: :model do
 
   describe 'instance methods' do
     describe '.discount' do
-      it 'returns the discount amount for the invoice item' do
+      it 'returns the bulk discount for the invoice item' do
         merchant = create(:merchant)
         item_1 = create(:item, merchant: merchant, unit_price: 10)
-        create(:bulk_discount, merchant: merchant, discount: 0.2, quant_threshold: 20)
-        create(:bulk_discount, merchant: merchant, discount: 0.5, quant_threshold: 50)
+        bd_1 = create(:bulk_discount, merchant: merchant, discount: 0.2, quant_threshold: 20)
+        bd_2 = create(:bulk_discount, merchant: merchant, discount: 0.5, quant_threshold: 50)
 
         invoice_item_1 = create(:invoice_item, item: item_1, quantity: 10)
 
-        expect(invoice_item_1.discount).to eq(0)
+        expect(invoice_item_1.bulk_discount).to eq(nil)
 
         invoice_item_2 = create(:invoice_item, item: item_1, quantity: 25)
 
-        expect(invoice_item_2.discount).to eq(50)
+        expect(invoice_item_2.bulk_discount.id).to eq(bd_1.id)
 
         invoice_item_3 = create(:invoice_item, item: item_1, quantity: 50)
 
-        expect(invoice_item_3.discount).to eq(250)
+        expect(invoice_item_3.bulk_discount.id).to eq(bd_2.id)
       end
 
-      it 'applies the discount with the largest percentage that meets the quantity criteria' do
+      it 'returns the discount with the largest discount that meets the quantity criteria' do
         merchant = create(:merchant)
         item_1 = create(:item, merchant: merchant, unit_price: 10)
-        create(:bulk_discount, merchant: merchant, discount: 0.3, quant_threshold: 20)
-        create(:bulk_discount, merchant: merchant, discount: 0.1, quant_threshold: 50)
+        bd_1 = create(:bulk_discount, merchant: merchant, discount: 0.3, quant_threshold: 20)
+        bd_2 = create(:bulk_discount, merchant: merchant, discount: 0.1, quant_threshold: 50)
 
         invoice_item_1 = create(:invoice_item, item: item_1, quantity: 50)
 
-        expect(invoice_item_1.discount).to eq(150)
+        expect(invoice_item_1.bulk_discount.id).to eq(bd_1.id)
       end
 
-      it 'returns discount zero if there are no discounts' do
+      it 'returns nil if there are no discounts' do
         merchant = create(:merchant)
         item_1 = create(:item, merchant: merchant, unit_price: 10)
         invoice_item_1 = create(:invoice_item, item: item_1, quantity: 50)
 
-        expect(invoice_item_1.discount).to eq(0)
+        expect(invoice_item_1.bulk_discount).to eq(nil)
       end
     end
   end
