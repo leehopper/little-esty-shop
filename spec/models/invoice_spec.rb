@@ -79,5 +79,24 @@ RSpec.describe Invoice do
         expect(invoice_2.total_discount).to eq(0)
       end
     end
+
+    describe '.total_discounted_revenue' do
+      it 'returns the total revenue for the invoice with discounts taken into account' do
+        merchant = create(:merchant)
+        invoice = create(:invoice)
+        item_1 = create(:item, merchant: merchant, unit_price: 100)
+        item_2 = create(:item, merchant: merchant, unit_price: 10)
+        item_3 = create(:item, merchant: merchant, unit_price: 3)
+        create(:invoice_item, item: item_1, invoice: invoice, quantity: 5)
+        create(:invoice_item, item: item_2, invoice: invoice, quantity: 25)
+        create(:invoice_item, item: item_3, invoice: invoice, quantity: 50)
+        create(:bulk_discount, merchant: merchant, discount: 0.2, quant_threshold: 20)
+        create(:bulk_discount, merchant: merchant, discount: 0.5, quant_threshold: 50)
+
+        expect(invoice.total_revenue).to eq(900)
+        expect(invoice.total_discount).to eq(125)
+        expect(invoice.total_discounted_revenue).to eq(775)
+      end
+    end
   end
 end
