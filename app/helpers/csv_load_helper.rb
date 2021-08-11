@@ -1,3 +1,4 @@
+# :nocov:
 module CsvLoadHelper
   def csv_import(model_name, row)
     if model_name == Invoice
@@ -13,3 +14,4 @@ module CsvLoadHelper
     model_name.find_or_create_by!(row.to_hash)
   end
 end
+# :nocov:

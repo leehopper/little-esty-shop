@@ -8,6 +8,12 @@
    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <h2>Little Etsy Shop</h2>
+  <h4><%= link_to 'Welcome', '/' %></h4>
+  <h4><%= link_to 'Merchants', merchants_path %></h4>
+  <h4><%= link_to 'Admin Dashboard', admin_path %></h4>
+  <br>
+
   <body>
     <% flash.each do |type, msg| %>
       <div>
