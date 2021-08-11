@@ -13,14 +13,9 @@ class InvoiceItem < ApplicationRecord
     sum("quantity * unit_price")
   end
 
-  def self.total_discount
-    sum("quantity * unit_price")
-  end
-
   def bulk_discount
     bulk_discounts.where('quant_threshold <= ?', quantity)
                   .order(discount: :desc)
                   .first
   end
-
 end

@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'the merchant items index', :vcr do
   before(:each) do
-    5.times do
+    3.times do
       create(:merchant)
     end
 
@@ -19,7 +19,7 @@ RSpec.describe 'the merchant items index', :vcr do
 
   describe 'hyperlinks' do
     it 'links to each merchant show page' do
-      Merchant.all.each.first(2) do |merchant|
+      Merchant.all.each do |merchant|
         click_link "#{merchant.name}"
 
         expect(current_path).to eq(merchant_path(merchant.id))
