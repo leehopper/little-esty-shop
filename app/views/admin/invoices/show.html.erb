@@ -1,9 +1,10 @@
 <h1> Admin Invoice Show Page</h1>
 
+<br>
 <div id='header_attributes'>
   <h2>Invoice ID: <%= @invoice.id %></h2>
 
-  < h3>
+  <h3>
     <%= form_with model: @admin_invoice, method: :patch do |f| %>
       <%= f.label :status, "Status:" %>
       <%= f.select :status, ['in_progress', 'completed', 'cancelled'], selected: @invoice.status %>
@@ -13,10 +14,15 @@
 
   <p><b>Created At:</b> <%= @invoice.created_at.strftime('%A, %b %d, %Y') %></p>
   <p><b>Customer:</b> <%= @customer.first_name %> <%= @customer.last_name %></p>
-  <p><b>Total Revenue:</b> $<%= @invoice.total_revenue/100 %></p>
+
+  <div id='revenue'>
+    <p><b>Total Revenue:</b> <%= number_to_currency(@invoice.total_revenue/100) %></p>
+    <p><b>Total Discounted Revenue:</b> <%= number_to_currency((@invoice.total_discounted_revenue / 100)) %>
+  </div>
   <br>
 </div>
 
+<br>
 <h3>Invoice Items:</h3>
 <% @invoice.invoice_items.each do |invoice_item| %>
   <div id="invoice_item-<%= invoice_item.id %>">
@@ -24,7 +30,7 @@
                            <%= item.name if item.id == invoice_item.item_id %>
                          <% end %></p>
     <p>Quantity: <%= invoice_item.quantity %></p>
-    <p>Unit Price: $<%= (invoice_item.unit_price/100).to_f.round(2) %></p>
+    <p>Unit Price: <%= number_to_currency(invoice_item.unit_price/100) %></p>
     <p>Status: <%= invoice_item.status %></p>
     <br>
   </div>
