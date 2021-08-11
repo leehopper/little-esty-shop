@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'the merchant items index', :vcr do
+RSpec.describe 'the merchants index', :vcr do
   before(:each) do
     3.times do
       create(:merchant)
@@ -24,7 +24,7 @@ RSpec.describe 'the merchant items index', :vcr do
 
         expect(current_path).to eq(merchant_path(merchant.id))
 
-        visit merchant_path
+        visit merchants_path
       end
     end
   end
