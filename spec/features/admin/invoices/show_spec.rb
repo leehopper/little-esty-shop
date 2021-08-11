@@ -2,7 +2,14 @@ require 'rails_helper'
 
 RSpec.describe 'the admin invoice show', :vcr do
   before (:each) do
-    @invoice = create(:invoice, :with_mixed_status_invoice_items, status: 'completed')
+    @invoice = create(:invoice, status: 'completed')
+
+    3.times do
+      merchant = create(:merchant, :with_items_and_discounts)
+      create(:invoice_item, item: merchant.items.first, invoice: @invoice, quantity: 15)
+      create(:invoice_item, item: merchant.items.second, invoice: @invoice, quantity: 20)
+      create(:invoice_item, item: merchant.items.third, invoice: @invoice, quantity: 25)
+    end
 
     visit admin_invoice_path(@invoice.id)
   end
@@ -30,16 +37,24 @@ RSpec.describe 'the admin invoice show', :vcr do
     it 'shows all items on the invoice' do
       @invoice.invoice_items.each do |invoice_item|
         within("#invoice_item-#{invoice_item.id}") do
-          expect(page).to have_content("#{invoice_item.item.name}")
-          expect(page).to have_content("#{invoice_item.quantity}")
-          expect(page).to have_content("#{(invoice_item.unit_price/100).to_f.round(2)}")
-          expect(page).to have_content("#{invoice_item.status}")
+          expect(page).to have_content("Item Name: #{invoice_item.item.name}")
+          expect(page).to have_content("Quantity: #{invoice_item.quantity}")
+          expect(page).to have_content("Unit Price: $#{(invoice_item.unit_price/100).to_f.round(2)}")
+          expect(page).to have_content("Status: #{invoice_item.status}")
         end
       end
     end
 
     it 'shows the total revenue for the invoice' do
-      expect(page).to have_content("Total Revenue: $#{@invoice.total_revenue/100}")
+      within('#revenue') do
+        expect(page).to have_content("Total Revenue: $#{(@invoice.total_revenue / 100).to_f.round(2)}")
+      end
+    end
+
+    it 'shows the total discounted revenue for the invoice' do
+      within('#revenue') do
+        expect(page).to have_content("Total Discounted Revenue: $#{(@invoice.total_discounted_revenue / 100).to_f.round(2)}")
+      end
     end
   end
 
